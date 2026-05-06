@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 390,
+  "title": {
+    "text": "Recovery activations by state",
+    "subtitle": "Colour shows DRFA activation count by state and territory."
+  },
+  "projection": {"type": "mercator", "center": [134, -28], "scale": 350, "translate": [255, 198]},
+  "data": {
+    "url": "geo/australia_states_main.topojson",
+    "format": {"type": "topojson", "feature": "collection"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.STATE",
+      "from": {
+        "data": {"url": "../processed_data/drfa_state_map.csv"},
+        "key": "state_code",
+        "fields": ["state", "state_abbr", "activations"]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "#fffaf1", "strokeWidth": 0.6},
+  "encoding": {
+    "color": {
+      "field": "activations",
+      "type": "quantitative",
+      "title": "Activations",
+      "scale": {"scheme": "orangered"},
+      "legend": {"orient": "bottom", "direction": "horizontal"}
+    },
+    "tooltip": [
+      {"field": "state", "type": "nominal", "title": "State"},
+      {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
+    ]
+  },
+  "config": {
+    "background": null,
+    "legend": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS"},
+    "title": {"font": "Georgia", "fontSize": 17, "subtitleFont": "Trebuchet MS", "subtitleFontSize": 12, "anchor": "start"},
+    "view": {"stroke": null}
+  }
+}

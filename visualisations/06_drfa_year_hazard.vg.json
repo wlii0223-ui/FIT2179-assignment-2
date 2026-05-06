@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 420,
+  "title": {
+    "text": "How recovery activations changed by hazard group",
+    "subtitle": "Use the hazard filter to isolate one recovery profile or show the combined burden."
+  },
+  "data": {"url": "../processed_data/drfa_year_hazard.csv"},
+  "params": [
+    {
+      "name": "drfa_hazard_select",
+      "value": null,
+      "bind": {
+        "input": "select",
+        "options": [null, "Flood / Rainfall", "Bushfire", "Storm", "Cyclone / Tropical Low", "Other"],
+        "labels": ["All hazards", "Flood / Rainfall", "Bushfire", "Storm", "Cyclone / Tropical Low", "Other"],
+        "name": "Hazard profile: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "drfa_hazard_select == null || datum.hazard_group == drfa_hazard_select"}
+  ],
+  "mark": {"type": "area", "interpolate": "monotone"},
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal", "title": null, "axis": {"labelAngle": 0, "labelOverlap": true}},
+    "y": {"field": "activations", "type": "quantitative", "stack": "zero", "title": "Activations"},
+    "color": {
+      "field": "hazard_group",
+      "type": "nominal",
+      "title": "Hazard group",
+      "scale": {
+        "domain": ["Flood / Rainfall", "Bushfire", "Storm", "Cyclone / Tropical Low", "Other"],
+        "range": ["#246a8d", "#c85a2e", "#6c5f9f", "#5f7fa3", "#8b7a62"]
+      },
+      "legend": {
+        "orient": "bottom",
+        "columns": 3,
+        "labelExpr": "datum.label == 'Flood / Rainfall' ? 'Flood / Rain' : datum.label == 'Cyclone / Tropical Low' ? 'Cyclone' : datum.label"
+      }
+    },
+    "tooltip": [
+      {"field": "year", "type": "ordinal", "title": "Year"},
+      {"field": "hazard_group", "type": "nominal", "title": "Hazard group"},
+      {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
+    ]
+  },
+  "config": {
+    "background": null,
+    "axis": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS", "gridColor": "#e7dfd2", "domain": false},
+    "legend": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS"},
+    "title": {"font": "Georgia", "fontSize": 19, "subtitleFont": "Trebuchet MS", "subtitleFontSize": 12, "anchor": "start"},
+    "view": {"stroke": null}
+  }
+}

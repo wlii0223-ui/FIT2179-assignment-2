@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 410,
+  "title": {
+    "text": "Local government areas with repeated activations",
+    "subtitle": "A lollipop plot makes repeated exposure easier to scan than another bar chart."
+  },
+  "data": {"url": "../processed_data/drfa_top_lgas.csv"},
+  "transform": [
+    {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "activations", "order": "descending"}]},
+    {"filter": "datum.rank <= 15"},
+    {"calculate": "0", "as": "zero"},
+    {"calculate": "datum.state == 'New South Wales' ? 'NSW' : datum.state == 'Victoria' ? 'VIC' : datum.state == 'Queensland' ? 'QLD' : datum.state == 'Western Australia' ? 'WA' : datum.state == 'South Australia' ? 'SA' : datum.state == 'Tasmania' ? 'TAS' : datum.state == 'Northern Territory' ? 'NT' : datum.state == 'Australian Capital Territory' ? 'ACT' : datum.state", "as": "state_abbr"},
+    {"calculate": "datum.location_name + ' (' + datum.state_abbr + ')'", "as": "label"}
+  ],
+  "layer": [
+    {
+      "mark": {"type": "rule", "stroke": "#cbbfad", "strokeWidth": 2},
+      "encoding": {
+        "x": {"field": "zero", "type": "quantitative"},
+        "x2": {"field": "activations"},
+        "y": {"field": "label", "type": "nominal", "sort": {"field": "activations", "order": "descending"}, "title": null, "axis": {"labelLimit": 170}}
+      }
+    },
+    {
+      "mark": {"type": "circle", "filled": true, "size": 95, "color": "#9d351f"},
+      "encoding": {
+        "x": {"field": "activations", "type": "quantitative", "title": "Activations"},
+        "y": {"field": "label", "type": "nominal", "sort": {"field": "activations", "order": "descending"}, "title": null, "axis": {"labelLimit": 170}},
+        "tooltip": [
+          {"field": "location_name", "type": "nominal", "title": "LGA"},
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "activations", "type": "quantitative", "title": "Activations"}
+        ]
+      }
+    }
+  ],
+  "config": {
+    "background": null,
+    "axis": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS", "gridColor": "#e7dfd2", "domain": false},
+    "title": {"font": "Georgia", "fontSize": 17, "subtitleFont": "Trebuchet MS", "subtitleFontSize": 12, "anchor": "start"},
+    "view": {"stroke": null}
+  }
+}

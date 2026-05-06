@@ -1,0 +1,125 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Historical disaster events",
+    "subtitle": "Filter by hazard type, limit the latest year, or brush the timeline to update the map.",
+    "fontSize": 34,
+    "subtitleFontSize": 19,
+    "subtitlePadding": 10,
+    "offset": 14
+  },
+  "params": [
+    {
+      "name": "hazard_select",
+      "value": null,
+      "bind": {
+        "input": "select",
+        "options": [null, "Bushfire", "Flood", "Cyclone", "Severe Storm", "Environmental"],
+        "labels": ["All hazards", "Bushfire", "Flood", "Cyclone", "Storm", "Heat / environmental"],
+        "name": "Hazard type: "
+      }
+    },
+    {
+      "name": "year_limit",
+      "value": 2014,
+      "bind": {
+        "input": "range",
+        "min": 1903,
+        "max": 2014,
+        "step": 1,
+        "name": "Show up to year: "
+      }
+    }
+  ],
+  "vconcat": [
+    {
+      "width": "container",
+      "height": 560,
+      "projection": {"type": "mercator", "center": [134, -27], "scale": 610, "translate": [555, 265]},
+      "layer": [
+        {
+          "data": {
+            "url": "https://cdn.jsdelivr.net/npm/vega-datasets@2/data/world-110m.json",
+            "format": {"type": "topojson", "feature": "countries"}
+          },
+          "mark": {"type": "geoshape", "fill": "#ded6c8", "stroke": "#fffaf1", "strokeWidth": 0.5}
+        },
+        {
+          "data": {"url": "../processed_data/historical_events_clean.csv"},
+          "transform": [
+            {"filter": "hazard_select == null || datum.category == hazard_select"},
+            {"filter": "datum.year <= year_limit"},
+            {"filter": {"param": "time_brush"}}
+          ],
+          "mark": {"type": "circle", "opacity": 0.72, "stroke": "#1d2320", "strokeWidth": 0.35},
+          "encoding": {
+            "longitude": {"field": "lon", "type": "quantitative"},
+            "latitude": {"field": "lat", "type": "quantitative"},
+            "color": {
+              "field": "category",
+              "type": "nominal",
+              "title": "Disaster type",
+              "scale": {
+                "domain": ["Flood", "Bushfire", "Severe Storm", "Cyclone", "Environmental", "Hail", "Earthquake", "Landslide", "Tornado"],
+                "range": ["#246a8d", "#c85a2e", "#6c5f9f", "#5f7fa3", "#8a6335", "#d09a2d", "#5f5147", "#7f8fa1", "#5a788a"]
+              },
+              "legend": {"orient": "bottom", "columns": 4}
+            },
+            "size": {
+              "field": "impact_score",
+              "type": "quantitative",
+              "scale": {"range": [20, 900]},
+              "legend": null
+            },
+            "tooltip": [
+              {"field": "title", "type": "nominal", "title": "Event"},
+              {"field": "year", "type": "ordinal", "title": "Year"},
+              {"field": "category", "type": "nominal", "title": "Type"},
+              {"field": "deaths", "type": "quantitative", "title": "Deaths", "format": ","},
+              {"field": "injuries", "type": "quantitative", "title": "Injuries", "format": ","},
+              {"field": "regions", "type": "nominal", "title": "Regions"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "width": "container",
+      "height": 92,
+      "data": {"url": "../processed_data/historical_events_clean.csv"},
+      "transform": [
+        {"filter": "hazard_select == null || datum.category == hazard_select"},
+        {"filter": "datum.year <= year_limit"}
+      ],
+      "params": [
+        {
+          "name": "time_brush",
+          "select": {"type": "interval", "encodings": ["x"]}
+        }
+      ],
+      "mark": {"type": "bar", "color": "#8b7a62", "opacity": 0.76},
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "bin": {"step": 5},
+          "title": "Brush a period to filter the map",
+          "axis": {"format": "d", "values": [1905, 1930, 1955, 1980, 2005, 2014], "labelAngle": 0}
+        },
+        "y": {"aggregate": "count", "type": "quantitative", "title": "Events"},
+        "tooltip": [
+          {"field": "year", "type": "quantitative", "title": "Year", "format": "d"},
+          {"aggregate": "count", "type": "quantitative", "title": "Events"}
+        ]
+      }
+    }
+  ],
+  "config": {
+    "background": null,
+    "concat": {"spacing": 22},
+    "title": {"font": "Georgia", "fontSize": 19, "subtitleFont": "Trebuchet MS", "subtitleFontSize": 12, "anchor": "start"},
+    "axis": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS", "gridColor": "#e7dfd2", "domain": false},
+    "legend": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS"},
+    "view": {"stroke": null}
+  }
+}

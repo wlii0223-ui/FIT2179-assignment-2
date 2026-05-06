@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Australia Under Pressure</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <p class="kicker">Australian natural disasters</p>
+      <h1>Australia Under Pressure</h1>
+      <p class="hero-lede">Where natural disasters hit, which hazards dominate, and how recovery burdens repeat across Australian communities.</p>
+      <div class="hero-stats" aria-label="Key findings">
+        <div>
+          <strong>5,993</strong>
+          <span>DRFA local activations inspected</span>
+        </div>
+        <div>
+          <strong>2006-2026</strong>
+          <span>recent recovery activation period</span>
+        </div>
+        <div>
+          <strong>Flood</strong>
+          <span>largest recovery hazard group</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="section-copy">
+        <p class="kicker">1. National footprint</p>
+        <h2>Natural disasters are concentrated where people, climate and exposure meet.</h2>
+        <p>Historical records show recurring flood, bushfire, storm, cyclone and heat events across Australia. The map starts with location and impact before the story shifts to recent recovery activations.</p>
+      </div>
+      <div class="wide-chart" id="national_map"></div>
+      <div class="two-up historical-row">
+        <div id="historical_categories" class="chart"></div>
+        <div id="historical_top_impact" class="chart"></div>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="section-copy">
+        <p class="kicker">2. Modern recovery burden</p>
+        <h2>Since 2006, flood and rainfall have dominated formal recovery activations.</h2>
+        <p>The DRFA activation dataset records where disaster recovery assistance was activated. It does not measure every disaster directly, but it gives a strong view of repeated recovery demand.</p>
+      </div>
+      <div class="two-up">
+        <div id="drfa_yearly" class="chart"></div>
+        <div id="drfa_hazard_counts" class="chart"></div>
+      </div>
+      <div class="wide-chart" id="drfa_year_hazard"></div>
+    </section>
+
+    <section class="story-section">
+      <div class="section-copy">
+        <p class="kicker">3. Different places, different hazards</p>
+        <h2>Every state has a different recovery profile.</h2>
+        <p>Flood and rainfall appear across the country, while bushfire, storm and cyclone activations create different regional signatures. This section is designed for comparison rather than exploration.</p>
+      </div>
+      <div class="two-up state-row">
+        <div id="drfa_state_counts" class="chart"></div>
+        <div class="chart note-card">
+          <div id="drfa_state_hazard"></div>
+          <p class="chart-note">State abbreviations: ACT = Australian Capital Territory; NSW = New South Wales; NT = Northern Territory; QLD = Queensland; SA = South Australia; TAS = Tasmania; VIC = Victoria; WA = Western Australia.</p>
+        </div>
+      </div>
+      <div class="wide-chart" id="drfa_hazard_small_multiples"></div>
+    </section>
+
+    <section class="story-section">
+      <div class="section-copy">
+        <p class="kicker">4. Repeated exposure</p>
+        <h2>Some local government areas appear again and again.</h2>
+        <p>Repeated activation is not a blame measure. It indicates communities where disaster recovery need has recurred, often because hazard exposure, settlement patterns and geography overlap.</p>
+      </div>
+      <div class="two-up uneven">
+        <div id="drfa_top_lgas" class="chart"></div>
+        <div id="drfa_category_counts" class="chart"></div>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="section-copy">
+        <p class="kicker">5. Human consequences</p>
+        <h2>The human cost is not only the spectacular disaster event.</h2>
+        <p>AIHW injury reporting shows that forces of nature continue to cause hospitalisations and deaths. Historical impact records provide context for high-impact events, while recent health data keeps the final section focused on people.</p>
+      </div>
+      <div class="two-up">
+        <div id="aihw_summary" class="chart"></div>
+        <div id="historical_impact_bubble" class="chart"></div>
+      </div>
+    </section>
+
+    <footer>
+      <p><strong>Data sources:</strong> <a href="https://data.gov.au/data/dataset/drfa-activation-history-by-lga">NEMA DRFA Activation History by LGA</a>; <a href="https://data.gov.au/data/dataset/disaster-events-with-category-impact-and-location">AIDR/AEMKH Disaster Events with Category Impact and Location</a>; <a href="https://www.aihw.gov.au/reports/injury/forces-of-nature">AIHW Forces of Nature</a>.</p>
+      <p><strong>Author:</strong> Weixiong Li. <strong>Date:</strong> 2026. <strong>AI acknowledgement:</strong> Generative AI was used to support project planning, code debugging, layout refinement and wording checks. The final design decisions, data interpretation and submitted work remain the author's responsibility.</p>
+    </footer>
+  </main>
+
+  <script src="js/main.js?v=20260507d"></script>
+</body>
+</html>

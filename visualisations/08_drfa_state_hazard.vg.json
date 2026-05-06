@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 315,
+  "title": "State hazard profiles",
+  "data": {"url": "../processed_data/drfa_state_hazard.csv"},
+  "mark": {"type": "rect", "stroke": "#fffaf1"},
+  "encoding": {
+    "x": {"field": "hazard_group", "type": "nominal", "title": null, "axis": {"labelAngle": -28}},
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "title": null,
+      "axis": {
+        "labelLimit": 120,
+        "labelExpr": "datum.label == 'Australian Capital Territory' ? 'ACT' : datum.label == 'New South Wales' ? 'NSW' : datum.label == 'Northern Territory' ? 'NT' : datum.label == 'Queensland' ? 'QLD' : datum.label == 'South Australia' ? 'SA' : datum.label == 'Tasmania' ? 'TAS' : datum.label == 'Victoria' ? 'VIC' : datum.label == 'Western Australia' ? 'WA' : datum.label"
+      }
+    },
+    "color": {
+      "field": "activations",
+      "type": "quantitative",
+      "title": "Activations",
+      "scale": {"scheme": "orangered"},
+      "legend": {"orient": "bottom", "direction": "horizontal"}
+    },
+    "tooltip": [
+      {"field": "state", "type": "nominal", "title": "State"},
+      {"field": "hazard_group", "type": "nominal", "title": "Hazard group"},
+      {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
+    ]
+  },
+  "config": {
+    "background": null,
+    "axis": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS", "grid": false, "domain": false},
+    "legend": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS"},
+    "title": {"font": "Georgia", "fontSize": 17, "anchor": "start"},
+    "view": {"stroke": null}
+  }
+}

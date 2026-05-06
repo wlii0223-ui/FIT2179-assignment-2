@@ -1,0 +1,34 @@
+state,hazard_group,activations
+Australian Capital Territory,Bushfire,2
+Australian Capital Territory,Flood / Rainfall,1
+Australian Capital Territory,Storm,8
+New South Wales,Bushfire,436
+New South Wales,Cyclone / Tropical Low,19
+New South Wales,Flood / Rainfall,1140
+New South Wales,Other,27
+New South Wales,Storm,297
+Northern Territory,Bushfire,23
+Northern Territory,Cyclone / Tropical Low,60
+Northern Territory,Flood / Rainfall,121
+Northern Territory,Storm,2
+Queensland,Bushfire,150
+Queensland,Cyclone / Tropical Low,336
+Queensland,Flood / Rainfall,985
+Queensland,Other,6
+Queensland,Storm,166
+South Australia,Bushfire,37
+South Australia,Flood / Rainfall,60
+South Australia,Storm,66
+Tasmania,Bushfire,34
+Tasmania,Flood / Rainfall,122
+Tasmania,Other,6
+Tasmania,Storm,11
+Victoria,Bushfire,247
+Victoria,Flood / Rainfall,564
+Victoria,Other,22
+Victoria,Storm,353
+Western Australia,Bushfire,25
+Western Australia,Cyclone / Tropical Low,43
+Western Australia,Flood / Rainfall,384
+Western Australia,Other,11
+Western Australia,Storm,229

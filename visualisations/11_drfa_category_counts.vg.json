@@ -1,0 +1,28 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 410,
+  "title": "Highest DRFA category group",
+  "data": {"url": "../processed_data/drfa_category_counts.csv"},
+  "mark": {"type": "arc", "innerRadius": 55, "stroke": "#fffaf1"},
+  "encoding": {
+    "theta": {"field": "activations", "type": "quantitative"},
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "title": "Category",
+      "scale": {"range": ["#8b7a62", "#246a8d", "#c85a2e"]},
+      "legend": {"orient": "bottom", "direction": "horizontal", "columns": 3}
+    },
+    "tooltip": [
+      {"field": "category", "type": "nominal", "title": "Category"},
+      {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
+    ]
+  },
+  "config": {
+    "background": null,
+    "legend": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS"},
+    "title": {"font": "Georgia", "fontSize": 17, "anchor": "start"},
+    "view": {"stroke": null}
+  }
+}

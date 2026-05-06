@@ -1,0 +1,117 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Four hazard groups over time",
+    "subtitle": "Split into two rows so each hazard profile has room for readable year labels.",
+    "fontSize": 32,
+    "subtitleFontSize": 17,
+    "subtitlePadding": 10,
+    "offset": 16
+  },
+  "data": {"url": "../processed_data/drfa_year_hazard.csv"},
+  "vconcat": [
+    {
+      "hconcat": [
+        {
+          "width": 420,
+          "height": 150,
+          "title": "Bushfire",
+          "transform": [{"filter": "datum.hazard_group == 'Bushfire'"}],
+          "mark": {"type": "area", "interpolate": "monotone", "opacity": 0.72, "color": "#c85a2e"},
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "title": null,
+              "scale": {"domain": [2006, 2026]},
+              "axis": {"values": [2006, 2010, 2015, 2020, 2025], "format": "d", "labelAngle": 0}
+            },
+            "y": {"field": "activations", "type": "quantitative", "title": "Activations"},
+            "tooltip": [
+              {"field": "year", "type": "quantitative", "title": "Year", "format": "d"},
+              {"field": "hazard_group", "type": "nominal", "title": "Hazard"},
+              {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
+            ]
+          }
+        },
+        {
+          "width": 420,
+          "height": 150,
+          "title": "Cyclone / Tropical Low",
+          "transform": [{"filter": "datum.hazard_group == 'Cyclone / Tropical Low'"}],
+          "mark": {"type": "area", "interpolate": "monotone", "opacity": 0.72, "color": "#5f7fa3"},
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "title": null,
+              "scale": {"domain": [2006, 2026]},
+              "axis": {"values": [2006, 2010, 2015, 2020, 2025], "format": "d", "labelAngle": 0}
+            },
+            "y": {"field": "activations", "type": "quantitative", "title": null},
+            "tooltip": [
+              {"field": "year", "type": "quantitative", "title": "Year", "format": "d"},
+              {"field": "hazard_group", "type": "nominal", "title": "Hazard"},
+              {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "hconcat": [
+        {
+          "width": 420,
+          "height": 150,
+          "title": "Flood / Rainfall",
+          "transform": [{"filter": "datum.hazard_group == 'Flood / Rainfall'"}],
+          "mark": {"type": "area", "interpolate": "monotone", "opacity": 0.72, "color": "#246a8d"},
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "title": null,
+              "scale": {"domain": [2006, 2026]},
+              "axis": {"values": [2006, 2010, 2015, 2020, 2025], "format": "d", "labelAngle": 0}
+            },
+            "y": {"field": "activations", "type": "quantitative", "title": "Activations"},
+            "tooltip": [
+              {"field": "year", "type": "quantitative", "title": "Year", "format": "d"},
+              {"field": "hazard_group", "type": "nominal", "title": "Hazard"},
+              {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
+            ]
+          }
+        },
+        {
+          "width": 420,
+          "height": 150,
+          "title": "Storm",
+          "transform": [{"filter": "datum.hazard_group == 'Storm'"}],
+          "mark": {"type": "area", "interpolate": "monotone", "opacity": 0.72, "color": "#6c5f9f"},
+          "encoding": {
+            "x": {
+              "field": "year",
+              "type": "quantitative",
+              "title": null,
+              "scale": {"domain": [2006, 2026]},
+              "axis": {"values": [2006, 2010, 2015, 2020, 2025], "format": "d", "labelAngle": 0}
+            },
+            "y": {"field": "activations", "type": "quantitative", "title": null},
+            "tooltip": [
+              {"field": "year", "type": "quantitative", "title": "Year", "format": "d"},
+              {"field": "hazard_group", "type": "nominal", "title": "Hazard"},
+              {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "background": null,
+    "concat": {"spacing": 28},
+    "axis": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS", "labelFontSize": 12, "titleFontSize": 13, "gridColor": "#e7dfd2", "domain": false},
+    "title": {"font": "Georgia", "fontSize": 20, "subtitleFont": "Trebuchet MS", "subtitleFontSize": 14, "anchor": "start", "offset": 12},
+    "view": {"stroke": null}
+  }
+}

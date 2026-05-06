@@ -1,0 +1,62 @@
+decade,category,events
+1900,Bushfire,1
+1900,Cyclone,2
+1900,Environmental,2
+1910,Bushfire,2
+1910,Cyclone,4
+1910,Environmental,4
+1910,Flood,2
+1920,Bushfire,2
+1920,Environmental,2
+1920,Flood,5
+1920,Landslide,1
+1930,Bushfire,3
+1930,Environmental,4
+1930,Flood,2
+1930,Severe Storm,2
+1940,Cyclone,1
+1940,Flood,1
+1940,Hail,1
+1950,Bushfire,6
+1950,Cyclone,4
+1950,Earthquake,1
+1950,Environmental,4
+1950,Flood,5
+1960,Bushfire,6
+1960,Cyclone,1
+1960,Earthquake,1
+1970,Bushfire,3
+1970,Cyclone,7
+1970,Environmental,1
+1970,Flood,7
+1970,Hail,3
+1970,Severe Storm,3
+1970,Tornado,1
+1980,Bushfire,7
+1980,Cyclone,3
+1980,Earthquake,2
+1980,Environmental,1
+1980,Flood,6
+1980,Hail,3
+1980,Severe Storm,2
+1990,Bushfire,6
+1990,Cyclone,3
+1990,Earthquake,1
+1990,Environmental,5
+1990,Flood,11
+1990,Hail,7
+1990,Landslide,2
+1990,Severe Storm,18
+2000,Bushfire,10
+2000,Cyclone,4
+2000,Environmental,3
+2000,Flood,15
+2000,Hail,7
+2000,Landslide,1
+2000,Severe Storm,16
+2010,Bushfire,9
+2010,Cyclone,2
+2010,Environmental,4
+2010,Flood,10
+2010,Severe Storm,6
+2010,Tornado,2

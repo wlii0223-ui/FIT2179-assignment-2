@@ -1,0 +1,9 @@
+state,state_abbr,state_code,tile_x,tile_y,activations
+New South Wales,NSW,3,2,1,1919
+Queensland,QLD,5,2,0,1643
+Victoria,VIC,8,2,2,1186
+Western Australia,WA,9,0,1,692
+Northern Territory,NT,4,1,0,206
+Tasmania,TAS,7,2,3,173
+South Australia,SA,6,1,1,163
+Australian Capital Territory,ACT,1,3,1,11

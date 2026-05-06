@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 315,
+  "title": {
+    "text": "Share of recovery activations by hazard",
+    "subtitle": "A donut view avoids another ranking chart while keeping the proportion clear."
+  },
+  "data": {"url": "../processed_data/drfa_hazard_counts.csv"},
+  "mark": {"type": "arc", "innerRadius": 72, "outerRadius": 128, "stroke": "#fffaf1", "strokeWidth": 2},
+  "encoding": {
+    "theta": {"field": "activations", "type": "quantitative"},
+    "color": {
+      "field": "hazard_group",
+      "type": "nominal",
+      "title": "Hazard",
+      "scale": {
+        "domain": ["Flood / Rainfall", "Bushfire", "Storm", "Cyclone / Tropical Low", "Other"],
+        "range": ["#246a8d", "#c85a2e", "#6c5f9f", "#5f7fa3", "#8b7a62"]
+      },
+      "legend": {
+        "orient": "bottom",
+        "columns": 2,
+        "labelExpr": "datum.label == 'Flood / Rainfall' ? 'Flood / Rain' : datum.label == 'Cyclone / Tropical Low' ? 'Cyclone' : datum.label"
+      }
+    },
+    "tooltip": [
+      {"field": "hazard_group", "type": "nominal", "title": "Hazard"},
+      {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
+    ]
+  },
+  "config": {
+    "background": null,
+    "legend": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS"},
+    "title": {"font": "Georgia", "fontSize": 17, "subtitleFont": "Trebuchet MS", "subtitleFontSize": 12, "anchor": "start"},
+    "view": {"stroke": null}
+  }
+}
