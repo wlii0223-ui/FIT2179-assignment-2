@@ -4,7 +4,7 @@
   "height": 390,
   "title": {
     "text": "Recovery activations by state",
-    "subtitle": "Darker eastern states indicate where repeated recovery demand has accumulated most strongly."
+    "subtitle": "Darker states show more recovery activations."
   },
   "projection": {"type": "mercator", "center": [134, -28], "scale": 350, "translate": [255, 198]},
   "data": {
