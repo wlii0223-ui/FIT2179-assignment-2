@@ -27,7 +27,7 @@
     },
     {
       "transform": [{"filter": "datum.category == 'Flood'"}],
-      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 8, "font": "Trebuchet MS", "fontSize": 14, "fontWeight": "bold", "color": "#18211d"},
+      "mark": {"type": "text", "align": "right", "baseline": "middle", "dx": -8, "font": "Trebuchet MS", "fontSize": 14, "fontWeight": "bold", "color": "#fffaf1"},
       "encoding": {
         "x": {"field": "events", "type": "quantitative"},
         "y": {"field": "category", "type": "nominal", "sort": "-x"},
