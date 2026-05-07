@@ -8,25 +8,39 @@
   },
   "data": {"url": "../processed_data/historical_top_impact_events.csv"},
   "transform": [
-    {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "impact_score", "order": "descending"}]},
+    {"calculate": "toNumber(datum.impact_score)", "as": "impact_value"},
+    {"window": [{"op": "rank", "as": "rank"}], "sort": [{"field": "impact_value", "order": "descending"}]},
     {"filter": "datum.rank <= 8"},
     {
       "calculate": "datum.title == 'Cyclone Tracy' ? 'Cyclone Tracy' : datum.title == 'Bushfire - Ash Wednesday' ? 'Ash Wednesday' : datum.title == 'Bushfire - Black Saturday, Victoria 2009' ? 'Black Saturday' : datum.title == 'Flood - Hunter Valley' ? 'Hunter Valley flood' : datum.category == 'Environmental' && isValid(datum.year) ? 'Heatwave ' + datum.year : datum.title == 'Bushfire - Black Tuesday Tasmania' ? 'Black Tuesday' : datum.title == 'Flood - Brisbane River' ? 'Brisbane River flood' : datum.title",
       "as": "short_label"
     }
   ],
-  "mark": {"type": "bar", "cornerRadiusEnd": 2, "color": "#8e3423"},
-  "encoding": {
-    "x": {"field": "impact_score", "type": "quantitative", "title": "Impact score"},
-    "y": {"field": "short_label", "type": "nominal", "sort": "-x", "title": null, "axis": {"labelLimit": 240}},
-    "tooltip": [
-      {"field": "title", "type": "nominal", "title": "Event"},
-      {"field": "year", "type": "ordinal", "title": "Year"},
-      {"field": "deaths", "type": "quantitative", "title": "Deaths", "format": ","},
-      {"field": "injuries", "type": "quantitative", "title": "Injuries", "format": ","},
-      {"field": "impact_score", "type": "quantitative", "title": "Impact score", "format": ","}
-    ]
-  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "cornerRadiusEnd": 2, "color": "#8e3423"},
+      "encoding": {
+        "x": {"field": "impact_value", "type": "quantitative", "title": "Impact score"},
+        "y": {"field": "short_label", "type": "nominal", "sort": "-x", "title": null, "axis": {"labelLimit": 240}},
+        "tooltip": [
+          {"field": "title", "type": "nominal", "title": "Event"},
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "deaths", "type": "quantitative", "title": "Deaths", "format": ","},
+          {"field": "injuries", "type": "quantitative", "title": "Injuries", "format": ","},
+          {"field": "impact_value", "type": "quantitative", "title": "Impact score", "format": ","}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.title == 'Cyclone Tracy'"}],
+      "mark": {"type": "text", "align": "right", "baseline": "middle", "dx": -8, "font": "Trebuchet MS", "fontSize": 14, "fontWeight": "bold", "color": "#fffaf1"},
+      "encoding": {
+        "x": {"field": "impact_value", "type": "quantitative"},
+        "y": {"field": "short_label", "type": "nominal", "sort": "-x"},
+        "text": {"value": "largest impact score"}
+      }
+    }
+  ],
   "config": {
     "background": null,
     "axis": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS", "gridColor": "#e7dfd2", "domain": false},

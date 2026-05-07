@@ -4,7 +4,7 @@
   "height": 390,
   "title": {
     "text": "Recovery activations by state",
-    "subtitle": "Colour shows DRFA activation count by state and territory."
+    "subtitle": "Darker eastern states indicate where repeated recovery demand has accumulated most strongly."
   },
   "projection": {"type": "mercator", "center": [134, -28], "scale": 350, "translate": [255, 198]},
   "data": {

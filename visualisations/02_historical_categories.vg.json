@@ -4,24 +4,37 @@
   "height": 300,
   "title": "Historical event categories",
   "data": {"url": "../processed_data/historical_category_counts.csv"},
-  "mark": {"type": "bar", "cornerRadiusEnd": 2},
-  "encoding": {
-    "x": {"field": "events", "type": "quantitative", "title": "Events"},
-    "y": {"field": "category", "type": "nominal", "sort": "-x", "title": null},
-    "color": {
-      "field": "category",
-      "type": "nominal",
-      "legend": null,
-      "scale": {
-        "domain": ["Flood", "Bushfire", "Severe Storm", "Cyclone", "Environmental", "Hail", "Earthquake", "Landslide", "Tornado"],
-        "range": ["#246a8d", "#c85a2e", "#6c5f9f", "#5f7fa3", "#8a6335", "#d09a2d", "#5f5147", "#7f8fa1", "#5a788a"]
+  "layer": [
+    {
+      "mark": {"type": "bar", "cornerRadiusEnd": 2},
+      "encoding": {
+        "x": {"field": "events", "type": "quantitative", "title": "Events"},
+        "y": {"field": "category", "type": "nominal", "sort": "-x", "title": null},
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": ["Flood", "Bushfire", "Severe Storm", "Cyclone", "Environmental", "Hail", "Earthquake", "Landslide", "Tornado"],
+            "range": ["#246a8d", "#c85a2e", "#6c5f9f", "#5f7fa3", "#8a6335", "#d09a2d", "#5f5147", "#7f8fa1", "#5a788a"]
+          }
+        },
+        "tooltip": [
+          {"field": "category", "type": "nominal", "title": "Type"},
+          {"field": "events", "type": "quantitative", "title": "Events"}
+        ]
       }
     },
-    "tooltip": [
-      {"field": "category", "type": "nominal", "title": "Type"},
-      {"field": "events", "type": "quantitative", "title": "Events"}
-    ]
-  },
+    {
+      "transform": [{"filter": "datum.category == 'Flood'"}],
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 8, "font": "Trebuchet MS", "fontSize": 14, "fontWeight": "bold", "color": "#18211d"},
+      "encoding": {
+        "x": {"field": "events", "type": "quantitative"},
+        "y": {"field": "category", "type": "nominal", "sort": "-x"},
+        "text": {"value": "most frequent"}
+      }
+    }
+  ],
   "config": {
     "background": null,
     "axis": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS", "gridColor": "#e7dfd2", "domain": false},

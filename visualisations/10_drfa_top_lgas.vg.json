@@ -34,6 +34,15 @@
           {"field": "activations", "type": "quantitative", "title": "Activations"}
         ]
       }
+    },
+    {
+      "transform": [{"filter": "datum.rank == 1"}],
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 10, "font": "Trebuchet MS", "fontSize": 14, "fontWeight": "bold", "color": "#18211d"},
+      "encoding": {
+        "x": {"field": "activations", "type": "quantitative"},
+        "y": {"field": "label", "type": "nominal", "sort": {"field": "activations", "order": "descending"}},
+        "text": {"value": "highest repeated activation count"}
+      }
     }
   ],
   "config": {

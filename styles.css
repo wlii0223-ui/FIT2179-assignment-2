@@ -158,6 +158,20 @@ h1 {
   font: 14px/1.45 "Trebuchet MS", Verdana, sans-serif;
 }
 
+.story-note {
+  max-width: 980px;
+  margin: 20px 0 0;
+  padding: 14px 18px;
+  border-left: 4px solid rgba(170, 53, 34, 0.58);
+  background: rgba(246, 241, 232, 0.72);
+  color: var(--muted);
+  font: 17px/1.55 "Trebuchet MS", Verdana, sans-serif;
+}
+
+.story-note strong {
+  color: var(--ink);
+}
+
 .wide-chart {
   min-height: 520px;
 }

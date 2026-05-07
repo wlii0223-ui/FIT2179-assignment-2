@@ -2,7 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 315,
-  "title": "Deaths, injuries and impact in historical records",
+  "title": {
+    "text": "Deaths, injuries and impact in historical records",
+    "subtitle": "Large bubbles show events with disproportionate impact."
+  },
   "data": {"url": "../processed_data/historical_events_clean.csv"},
   "transform": [{"filter": "datum.deaths > 0 || datum.injuries > 0"}],
   "mark": {"type": "circle", "opacity": 0.66, "stroke": "#1d2320", "strokeWidth": 0.35},
