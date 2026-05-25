@@ -245,7 +245,7 @@ h1 {
 .story-section::before {
   content: attr(data-section);
   position: absolute;
-  left: -2px;
+  left: -92px;
   top: 72px;
   width: 74px;
   color: rgba(170, 53, 34, 0.22);
@@ -256,7 +256,7 @@ h1 {
 .story-section::after {
   content: "";
   position: absolute;
-  left: 36px;
+  left: -50px;
   top: 126px;
   bottom: 42px;
   width: 1px;
@@ -269,7 +269,7 @@ h1 {
   gap: 30px;
   align-items: start;
   margin-bottom: 26px;
-  padding-left: 92px;
+  padding-left: 0;
 }
 
 .section-copy h2 {
@@ -286,9 +286,9 @@ h1 {
 }
 
 .interaction-note {
-  margin: -4px 0 16px 92px;
+  margin: -4px 0 16px;
   padding: 10px 14px;
-  max-width: 880px;
+  max-width: 760px;
   border: 1px solid rgba(36, 106, 141, 0.25);
   background: rgba(237, 241, 236, 0.75);
   color: var(--muted);
@@ -322,7 +322,7 @@ h1 {
 .story-note {
   max-width: 980px;
   margin: 20px 0 0;
-  margin-left: 92px;
+  margin-left: 0;
   padding: 14px 18px;
   border-left: 4px solid rgba(170, 53, 34, 0.58);
   background: rgba(246, 241, 232, 0.72);
@@ -437,6 +437,11 @@ h1 {
 #drfa_hazard_small_multiples,
 #national_map {
   min-height: 500px;
+}
+
+#drfa_hazard_counts,
+#drfa_category_counts {
+  overflow-x: hidden;
 }
 
 #national_map {

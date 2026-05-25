@@ -1,28 +1,79 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 410,
-  "title": "Highest DRFA category group",
-  "data": {"url": "../processed_data/drfa_category_counts.csv"},
-  "mark": {"type": "arc", "innerRadius": 55, "stroke": "#fffaf1"},
-  "encoding": {
-    "theta": {"field": "activations", "type": "quantitative"},
-    "color": {
-      "field": "category",
-      "type": "nominal",
-      "title": "Category",
-      "scale": {"range": ["#8b7a62", "#246a8d", "#c85a2e"]},
-      "legend": {"orient": "bottom", "direction": "horizontal", "columns": 3}
-    },
-    "tooltip": [
-      {"field": "category", "type": "nominal", "title": "Category"},
-      {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
-    ]
+  "height": 390,
+  "title": {
+    "text": "DRFA category weight",
+    "subtitle": "Circle area compares activation volume without using another pie chart."
   },
+  "data": {"url": "../processed_data/drfa_category_counts.csv"},
+  "transform": [
+    {
+      "calculate": "datum.category == 'unknown' ? 'Unclassified' : datum.category",
+      "as": "category_label"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "circle", "opacity": 0.86, "stroke": "#fffaf1", "strokeWidth": 2},
+      "encoding": {
+        "x": {
+          "field": "category_label",
+          "type": "nominal",
+          "title": null,
+          "sort": ["Unclassified", "A/B", "C/D"]
+        },
+        "y": {"value": 150},
+        "size": {
+          "field": "activations",
+          "type": "quantitative",
+          "title": "Activations",
+          "scale": {"range": [4500, 23000]},
+          "legend": null
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": ["unknown", "A/B", "C/D"],
+            "range": ["#8b7a62", "#246a8d", "#c85a2e"]
+          }
+        },
+        "tooltip": [
+          {"field": "category", "type": "nominal", "title": "Category"},
+          {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "center", "baseline": "middle", "font": "Georgia", "fontSize": 22, "fontWeight": "bold", "color": "#fffaf1"},
+      "encoding": {
+        "x": {"field": "category_label", "type": "nominal", "sort": ["Unclassified", "A/B", "C/D"]},
+        "y": {"value": 145},
+        "text": {
+          "field": "activations",
+          "type": "quantitative",
+          "format": ","
+        }
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "center", "baseline": "top", "dy": 88, "font": "Trebuchet MS", "fontSize": 15, "fontWeight": "bold", "color": "#18211d"},
+      "encoding": {
+        "x": {"field": "category_label", "type": "nominal", "sort": ["Unclassified", "A/B", "C/D"]},
+        "y": {"value": 150},
+        "text": {
+          "field": "category_label",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
   "config": {
     "background": null,
-    "legend": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS"},
-    "title": {"font": "Georgia", "fontSize": 17, "anchor": "start"},
+    "axis": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS", "grid": false, "ticks": false, "domain": false},
+    "title": {"font": "Georgia", "fontSize": 17, "subtitleFont": "Trebuchet MS", "subtitleFontSize": 12, "anchor": "start"},
     "view": {"stroke": null}
   }
 }

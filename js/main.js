@@ -14,7 +14,7 @@ const charts = [
   ["#historical_impact_bubble", "visualisations/13_historical_impact_bubble.vg.json"]
 ];
 
-const ASSET_VERSION = "20260507g";
+const ASSET_VERSION = "20260525b";
 
 function versionedUrl(url) {
   if (/^https?:\/\//.test(url)) {

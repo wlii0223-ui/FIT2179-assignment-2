@@ -2,14 +2,43 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 300,
-  "title": "Historical event categories",
-  "data": {"url": "../processed_data/historical_category_counts.csv"},
+  "title": {
+    "text": "Historical event frequency grid",
+    "subtitle": "Each square represents about two recorded events; exact counts appear on hover."
+  },
+  "data": {
+    "sequence": {"start": 0, "stop": 133, "step": 1, "as": "tile"}
+  },
+  "transform": [
+    {
+      "calculate": "datum.tile < 32 ? 'Flood' : datum.tile < 60 ? 'Bushfire' : datum.tile < 84 ? 'Severe Storm' : datum.tile < 100 ? 'Cyclone' : datum.tile < 115 ? 'Environmental' : datum.tile < 126 ? 'Hail' : datum.tile < 129 ? 'Earthquake' : datum.tile < 131 ? 'Landslide' : 'Tornado'",
+      "as": "category"
+    },
+    {
+      "calculate": "datum.category == 'Flood' ? datum.tile : datum.category == 'Bushfire' ? datum.tile - 32 : datum.category == 'Severe Storm' ? datum.tile - 60 : datum.category == 'Cyclone' ? datum.tile - 84 : datum.category == 'Environmental' ? datum.tile - 100 : datum.category == 'Hail' ? datum.tile - 115 : datum.category == 'Earthquake' ? datum.tile - 126 : datum.category == 'Landslide' ? datum.tile - 129 : datum.tile - 131",
+      "as": "unit"
+    },
+    {
+      "calculate": "datum.category == 'Flood' ? 64 : datum.category == 'Bushfire' ? 55 : datum.category == 'Severe Storm' ? 47 : datum.category == 'Cyclone' ? 31 : datum.category == 'Environmental' ? 30 : datum.category == 'Hail' ? 21 : datum.category == 'Earthquake' ? 5 : datum.category == 'Landslide' ? 4 : 3",
+      "as": "events"
+    }
+  ],
   "layer": [
     {
-      "mark": {"type": "bar", "cornerRadiusEnd": 2},
+      "mark": {"type": "square", "size": 95, "filled": true},
       "encoding": {
-        "x": {"field": "events", "type": "quantitative", "title": "Events"},
-        "y": {"field": "category", "type": "nominal", "sort": "-x", "title": null},
+        "x": {
+          "field": "unit",
+          "type": "quantitative",
+          "title": "Approx. event units",
+          "axis": {"tickCount": 5, "labelExpr": "datum.value == 0 ? '0' : datum.value * 2"}
+        },
+        "y": {
+          "field": "category",
+          "type": "nominal",
+          "sort": ["Flood", "Bushfire", "Severe Storm", "Cyclone", "Environmental", "Hail", "Earthquake", "Landslide", "Tornado"],
+          "title": null
+        },
         "color": {
           "field": "category",
           "type": "nominal",
@@ -21,16 +50,16 @@
         },
         "tooltip": [
           {"field": "category", "type": "nominal", "title": "Type"},
-          {"field": "events", "type": "quantitative", "title": "Events"}
+          {"field": "events", "type": "quantitative", "title": "Recorded events"}
         ]
       }
     },
     {
-      "transform": [{"filter": "datum.category == 'Flood'"}],
-      "mark": {"type": "text", "align": "right", "baseline": "middle", "dx": -8, "font": "Trebuchet MS", "fontSize": 14, "fontWeight": "bold", "color": "#fffaf1"},
+      "transform": [{"filter": "datum.category == 'Flood' && datum.unit == 22"}],
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 8, "font": "Trebuchet MS", "fontSize": 14, "fontWeight": "bold", "color": "#fffaf1"},
       "encoding": {
-        "x": {"field": "events", "type": "quantitative"},
-        "y": {"field": "category", "type": "nominal", "sort": "-x"},
+        "x": {"field": "unit", "type": "quantitative"},
+        "y": {"field": "category", "type": "nominal", "sort": ["Flood", "Bushfire", "Severe Storm", "Cyclone", "Environmental", "Hail", "Earthquake", "Landslide", "Tornado"]},
         "text": {"value": "most frequent"}
       }
     }
@@ -38,7 +67,7 @@
   "config": {
     "background": null,
     "axis": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS", "gridColor": "#e7dfd2", "domain": false},
-    "title": {"font": "Georgia", "fontSize": 17, "anchor": "start"},
+    "title": {"font": "Georgia", "fontSize": 17, "subtitleFont": "Trebuchet MS", "subtitleFontSize": 12, "anchor": "start"},
     "view": {"stroke": null}
   }
 }
