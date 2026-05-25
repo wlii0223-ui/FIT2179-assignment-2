@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
+  "width": 420,
   "height": 390,
   "title": {
     "text": "DRFA category weight",
-    "subtitle": "Circle area compares activation volume without using another pie chart."
+    "subtitle": "Circle area compares activation volume."
   },
   "data": {"url": "../processed_data/drfa_category_counts.csv"},
   "transform": [

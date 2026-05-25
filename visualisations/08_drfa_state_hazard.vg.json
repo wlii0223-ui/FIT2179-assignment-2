@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
+  "width": 520,
   "height": 315,
   "title": "State hazard profiles",
   "data": {"url": "../processed_data/drfa_state_hazard.csv"},

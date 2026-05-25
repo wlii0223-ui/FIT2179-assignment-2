@@ -302,11 +302,31 @@ h1 {
   border-top: 3px solid rgba(170, 53, 34, 0.42);
   padding: 22px;
   min-height: 360px;
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: visible;
   width: 100%;
   box-shadow: 0 16px 34px var(--shadow);
   backdrop-filter: blur(2px);
+}
+
+.wide-chart > .vega-embed,
+.chart > .vega-embed,
+.note-card .vega-embed {
+  display: block !important;
+  width: max-content !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+}
+
+.wide-chart .vega-embed svg,
+.chart .vega-embed svg,
+.wide-chart.vega-embed > svg,
+.chart.vega-embed > svg,
+.note-card .vega-embed svg {
+  display: block !important;
+  margin-inline: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
 }
 
 .note-card {

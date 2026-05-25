@@ -14,7 +14,7 @@ const charts = [
   ["#historical_impact_bubble", "visualisations/13_historical_impact_bubble.vg.json"]
 ];
 
-const ASSET_VERSION = "20260525b";
+const ASSET_VERSION = "20260525c";
 
 function versionedUrl(url) {
   if (/^https?:\/\//.test(url)) {
@@ -101,7 +101,15 @@ function rewriteSpec(spec, target) {
     historical_impact_bubble: 260
   };
   const reserved = reserves[id] || (isWide ? 190 : 180);
-  const fixedWidth = Math.max(260, containerWidth - reserved);
+  const fixedById = {
+    historical_categories: 500,
+    drfa_hazard_counts: 430,
+    drfa_category_counts: 420,
+    drfa_state_counts: 460,
+    drfa_state_hazard: 520,
+    historical_impact_bubble: 320
+  };
+  const fixedWidth = fixedById[id] || Math.max(260, containerWidth - reserved);
 
   mergeConfig(spec);
 

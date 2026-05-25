@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
+  "width": 420,
   "height": 300,
   "title": {
     "text": "Historical event frequency grid",
-    "subtitle": "Each square represents about two recorded events; exact counts appear on hover."
+    "subtitle": "One square is about two events; hover for exact counts."
   },
   "data": {
     "sequence": {"start": 0, "stop": 133, "step": 1, "as": "tile"}
@@ -25,12 +25,12 @@
   ],
   "layer": [
     {
-      "mark": {"type": "square", "size": 95, "filled": true},
+      "mark": {"type": "square", "size": 88, "filled": true},
       "encoding": {
         "x": {
           "field": "unit",
           "type": "quantitative",
-          "title": "Approx. event units",
+          "title": "Events, approx.",
           "axis": {"tickCount": 5, "labelExpr": "datum.value == 0 ? '0' : datum.value * 2"}
         },
         "y": {
