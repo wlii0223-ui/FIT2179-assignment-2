@@ -7,14 +7,27 @@
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260525a">
 </head>
 <body>
   <main>
     <section class="hero">
+      <div class="hero-map" aria-hidden="true">
+        <span class="hotspot flood"></span>
+        <span class="hotspot bushfire"></span>
+        <span class="hotspot storm"></span>
+        <span class="hotspot cyclone"></span>
+      </div>
       <p class="kicker">Australian natural disasters</p>
       <h1>Australia Under Pressure</h1>
-      <p class="hero-lede">Where natural disasters hit, which hazards dominate, and how recovery burdens repeat across Australian communities.</p>
+      <p class="hero-lede">An emergency-atlas view of where natural hazards occur, which events dominate, and how recovery burdens repeat across Australian communities.</p>
+      <div class="hazard-strip" aria-label="Hazard colour key">
+        <span class="hazard-chip flood">Flood</span>
+        <span class="hazard-chip bushfire">Bushfire</span>
+        <span class="hazard-chip cyclone">Cyclone</span>
+        <span class="hazard-chip storm">Storm</span>
+        <span class="hazard-chip heat">Heat</span>
+      </div>
       <div class="hero-stats" aria-label="Key findings">
         <div>
           <strong>5,993</strong>
@@ -31,12 +44,13 @@
       </div>
     </section>
 
-    <section class="story-section">
+    <section class="story-section" data-section="01">
       <div class="section-copy">
-        <p class="kicker">1. National footprint</p>
-        <h2>Natural disasters are concentrated where people, climate and exposure meet.</h2>
-        <p>Historical records show recurring flood, bushfire, storm, cyclone and heat events across Australia. The map starts with location and impact before the story shifts to recent recovery activations.</p>
+        <p class="kicker">01. National footprint</p>
+        <h2>Hazards cluster where climate, people and exposure overlap.</h2>
+        <p>Historical records show recurring flood, bushfire, storm, cyclone and heat events across Australia. Use the controls to isolate a hazard, limit the latest year, or brush the timeline to update the map.</p>
       </div>
+      <p class="interaction-note">Interact: hazard filter, year slider and timeline brush all update the national map; hover points for event details.</p>
       <div class="wide-chart" id="national_map"></div>
       <div class="two-up historical-row">
         <div id="historical_categories" class="chart"></div>
@@ -45,10 +59,10 @@
       <p class="story-note"><strong>Reading the footprint:</strong> floods are the most frequent historical category, but the highest-impact records are not simply the most common hazards. A small number of cyclones, bushfires and heatwaves dominate the severe end of the historical record.</p>
     </section>
 
-    <section class="story-section">
+    <section class="story-section" data-section="02">
       <div class="section-copy">
-        <p class="kicker">2. Modern recovery burden</p>
-        <h2>Since 2006, flood and rainfall have dominated formal recovery activations.</h2>
+        <p class="kicker">02. Modern recovery burden</p>
+        <h2>Flood and rainfall dominate formal recovery demand.</h2>
         <p>The DRFA activation dataset records where disaster recovery assistance was activated. It does not measure every disaster directly, but it gives a strong view of repeated recovery demand.</p>
       </div>
       <div class="two-up">
@@ -59,10 +73,10 @@
       <p class="story-note"><strong>Modern recovery signal:</strong> DRFA activations are not a complete disaster catalogue. They show where formal recovery support was activated, making them useful for identifying repeated public recovery demand after major events.</p>
     </section>
 
-    <section class="story-section">
+    <section class="story-section" data-section="03">
       <div class="section-copy">
-        <p class="kicker">3. Different places, different hazards</p>
-        <h2>Every state has a different recovery profile.</h2>
+        <p class="kicker">03. Different places, different hazards</p>
+        <h2>Eastern states carry the largest activation burden, but every state has its own hazard profile.</h2>
         <p>Flood and rainfall appear across the country, while bushfire, storm and cyclone activations create different regional signatures. This section is designed for comparison rather than exploration.</p>
       </div>
       <div class="two-up state-row">
@@ -76,10 +90,10 @@
       <p class="story-note"><strong>Regional pattern:</strong> New South Wales and Queensland carry the largest activation counts, while the heatmap shows that each state combines hazards differently. The comparison matters more than any single ranking.</p>
     </section>
 
-    <section class="story-section">
+    <section class="story-section" data-section="04">
       <div class="section-copy">
-        <p class="kicker">4. Repeated exposure</p>
-        <h2>Some local government areas appear again and again.</h2>
+        <p class="kicker">04. Repeated exposure</p>
+        <h2>Some local government areas return to the recovery system again and again.</h2>
         <p>Repeated activation is not a blame measure. It indicates communities where disaster recovery need has recurred, often because hazard exposure, settlement patterns and geography overlap.</p>
       </div>
       <div class="two-up uneven">
@@ -89,10 +103,10 @@
       <p class="story-note"><strong>Repeated exposure:</strong> the leading LGAs are not presented as failures. They identify places where geography, settlement and hazard recurrence repeatedly intersect with recovery systems.</p>
     </section>
 
-    <section class="story-section">
+    <section class="story-section" data-section="05">
       <div class="section-copy">
-        <p class="kicker">5. Human consequences</p>
-        <h2>The human cost is not only the spectacular disaster event.</h2>
+        <p class="kicker">05. Human consequences</p>
+        <h2>The human cost continues after the spectacular disaster event.</h2>
         <p>AIHW injury reporting shows that forces of nature continue to cause hospitalisations and deaths. Historical impact records provide context for high-impact events, while recent health data keeps the final section focused on people.</p>
       </div>
       <div class="two-up">
@@ -100,6 +114,17 @@
         <div id="historical_impact_bubble" class="chart"></div>
       </div>
       <p class="story-note"><strong>Human endpoint:</strong> the final section shifts from places to people. Hospitalisations and deaths show that natural hazards continue to create measurable health burdens beyond the headline disaster event.</p>
+    </section>
+
+    <section class="conclusion-panel">
+      <p class="kicker">Conclusion</p>
+      <h2>Disaster risk is a pattern, not a single event.</h2>
+      <p>Across the evidence, floods appear most often, the eastern states absorb the largest formal recovery burden, and several local government areas face repeated activations. The pattern suggests that natural disaster impact is shaped by hazard exposure, settlement geography and the repeated need for recovery support.</p>
+      <div class="takeaway-grid" aria-label="Final takeaways">
+        <div><strong>Locate</strong><span>events and activations across Australia</span></div>
+        <div><strong>Compare</strong><span>hazards, states and local governments</span></div>
+        <div><strong>Explain</strong><span>why repeated recovery demand matters</span></div>
+      </div>
     </section>
 
     <footer>

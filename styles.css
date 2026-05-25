@@ -2,6 +2,7 @@
   --paper: #efede6;
   --panel: #f6f1e8;
   --panel-quiet: #f2ecdf;
+  --panel-cool: #edf1ec;
   --ink: #18211d;
   --muted: #5f6b66;
   --line: #d1c8b8;
@@ -22,6 +23,8 @@
 body {
   margin: 0;
   background:
+    radial-gradient(circle at 12% 8%, rgba(170, 53, 34, 0.08), transparent 24%),
+    radial-gradient(circle at 82% 18%, rgba(36, 106, 141, 0.08), transparent 28%),
     linear-gradient(90deg, rgba(24, 33, 29, 0.04) 1px, transparent 1px) 0 0 / 72px 72px,
     linear-gradient(0deg, rgba(24, 33, 29, 0.025) 1px, transparent 1px) 0 0 / 72px 72px,
     var(--paper);
@@ -35,13 +38,14 @@ main {
 }
 
 .hero {
-  min-height: 72vh;
+  min-height: 78vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 54px 0 46px;
+  padding: 70px 0 54px;
   border-bottom: 1px solid var(--line);
   position: relative;
+  overflow: hidden;
 }
 
 .hero::before {
@@ -52,6 +56,81 @@ main {
   position: absolute;
   top: 28px;
   left: 0;
+}
+
+.hero::after {
+  content: "EMERGENCY ATLAS";
+  position: absolute;
+  right: 2px;
+  bottom: 42px;
+  color: rgba(24, 33, 29, 0.18);
+  font: 700 12px/1 "Trebuchet MS", Verdana, sans-serif;
+  letter-spacing: 0.32em;
+  writing-mode: vertical-rl;
+}
+
+.hero-map {
+  position: absolute;
+  right: 0;
+  top: 78px;
+  width: min(46vw, 620px);
+  aspect-ratio: 1.45;
+  opacity: 0.34;
+  pointer-events: none;
+}
+
+.hero-map::before {
+  content: "";
+  position: absolute;
+  inset: 8% 4% 2% 3%;
+  background: rgba(184, 176, 160, 0.45);
+  clip-path: polygon(12% 54%, 18% 42%, 32% 34%, 44% 25%, 62% 20%, 78% 30%, 92% 50%, 86% 70%, 70% 78%, 52% 72%, 37% 82%, 20% 73%);
+  filter: drop-shadow(0 18px 36px rgba(43, 36, 25, 0.14));
+}
+
+.hero-map::after {
+  content: "";
+  position: absolute;
+  left: 62%;
+  top: 69%;
+  width: 13%;
+  height: 17%;
+  background: rgba(184, 176, 160, 0.45);
+  clip-path: polygon(45% 0, 72% 24%, 64% 70%, 40% 100%, 22% 62%);
+}
+
+.hotspot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ember);
+  box-shadow: 0 0 0 12px rgba(170, 53, 34, 0.13);
+}
+
+.hotspot.flood {
+  left: 74%;
+  top: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 16px rgba(36, 106, 141, 0.16);
+}
+
+.hotspot.bushfire {
+  left: 62%;
+  top: 62%;
+  background: #cf4a2b;
+}
+
+.hotspot.storm {
+  left: 51%;
+  top: 30%;
+  background: var(--storm);
+}
+
+.hotspot.cyclone {
+  left: 70%;
+  top: 28%;
+  background: var(--cyclone);
 }
 
 .kicker {
@@ -75,6 +154,56 @@ h1 {
   margin: 30px 0 0;
   color: var(--muted);
   font: 24px/1.5 "Trebuchet MS", Verdana, sans-serif;
+}
+
+.hazard-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 760px;
+  margin-top: 24px;
+}
+
+.hazard-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 34px;
+  padding: 7px 12px;
+  border: 1px solid rgba(103, 91, 73, 0.22);
+  background: rgba(246, 241, 232, 0.72);
+  color: var(--ink);
+  font: 700 13px/1 "Trebuchet MS", Verdana, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.hazard-chip::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.hazard-chip.flood {
+  color: var(--blue);
+}
+
+.hazard-chip.bushfire {
+  color: #cf4a2b;
+}
+
+.hazard-chip.cyclone {
+  color: var(--cyclone);
+}
+
+.hazard-chip.storm {
+  color: var(--storm);
+}
+
+.hazard-chip.heat {
+  color: var(--ochre);
 }
 
 .hero-stats {
@@ -108,9 +237,30 @@ h1 {
 }
 
 .story-section {
-  padding: 54px 0;
+  padding: 68px 0;
   border-bottom: 1px solid var(--line);
   position: relative;
+}
+
+.story-section::before {
+  content: attr(data-section);
+  position: absolute;
+  left: -2px;
+  top: 72px;
+  width: 74px;
+  color: rgba(170, 53, 34, 0.22);
+  font: 700 42px/1 "Trebuchet MS", Verdana, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.story-section::after {
+  content: "";
+  position: absolute;
+  left: 36px;
+  top: 126px;
+  bottom: 42px;
+  width: 1px;
+  background: linear-gradient(var(--line), transparent);
 }
 
 .section-copy {
@@ -119,11 +269,12 @@ h1 {
   gap: 30px;
   align-items: start;
   margin-bottom: 26px;
+  padding-left: 92px;
 }
 
 .section-copy h2 {
   margin: 0;
-  font-size: clamp(38px, 4.4vw, 64px);
+  font-size: clamp(36px, 4vw, 58px);
   line-height: 1;
   letter-spacing: 0;
 }
@@ -134,9 +285,19 @@ h1 {
   font: 18px/1.62 "Trebuchet MS", Verdana, sans-serif;
 }
 
+.interaction-note {
+  margin: -4px 0 16px 92px;
+  padding: 10px 14px;
+  max-width: 880px;
+  border: 1px solid rgba(36, 106, 141, 0.25);
+  background: rgba(237, 241, 236, 0.75);
+  color: var(--muted);
+  font: 700 14px/1.4 "Trebuchet MS", Verdana, sans-serif;
+}
+
 .wide-chart,
 .chart {
-  background: rgba(246, 241, 232, 0.94);
+  background: linear-gradient(180deg, rgba(249, 246, 239, 0.96), rgba(242, 236, 223, 0.96));
   border: 1px solid var(--line);
   border-top: 3px solid rgba(170, 53, 34, 0.42);
   padding: 22px;
@@ -161,6 +322,7 @@ h1 {
 .story-note {
   max-width: 980px;
   margin: 20px 0 0;
+  margin-left: 92px;
   padding: 14px 18px;
   border-left: 4px solid rgba(170, 53, 34, 0.58);
   background: rgba(246, 241, 232, 0.72);
@@ -170,6 +332,57 @@ h1 {
 
 .story-note strong {
   color: var(--ink);
+}
+
+.conclusion-panel {
+  margin: 56px 0 0;
+  padding: 44px 48px;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--ember);
+  background:
+    linear-gradient(135deg, rgba(170, 53, 34, 0.07), transparent 34%),
+    linear-gradient(180deg, rgba(249, 246, 239, 0.96), rgba(237, 241, 236, 0.94));
+  box-shadow: 0 22px 46px var(--shadow);
+}
+
+.conclusion-panel h2 {
+  max-width: 920px;
+  margin: 0;
+  font-size: clamp(42px, 5vw, 78px);
+  line-height: 0.95;
+}
+
+.conclusion-panel p:not(.kicker) {
+  max-width: 980px;
+  color: var(--muted);
+  font: 20px/1.55 "Trebuchet MS", Verdana, sans-serif;
+}
+
+.takeaway-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  max-width: 940px;
+  margin-top: 26px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.takeaway-grid div {
+  padding: 20px;
+  background: rgba(246, 241, 232, 0.9);
+}
+
+.takeaway-grid strong {
+  display: block;
+  font-size: 28px;
+}
+
+.takeaway-grid span {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font: 14px/1.4 "Trebuchet MS", Verdana, sans-serif;
 }
 
 .wide-chart {
@@ -305,7 +518,15 @@ footer a:hover {
     min-height: auto;
   }
 
+  .hero-map,
+  .hero::after,
+  .story-section::before,
+  .story-section::after {
+    display: none;
+  }
+
   .hero-stats,
+  .takeaway-grid,
   .section-copy,
   .two-up,
   .two-up.uneven {
@@ -326,5 +547,16 @@ footer a:hover {
   .chart {
     min-height: 360px;
     overflow-x: auto;
+  }
+
+  .section-copy,
+  .interaction-note,
+  .story-note {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .conclusion-panel {
+    padding: 30px 22px;
   }
 }
