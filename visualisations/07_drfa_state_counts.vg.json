@@ -11,30 +11,63 @@
     "url": "geo/australia_states_main.topojson",
     "format": {"type": "topojson", "feature": "collection"}
   },
-  "transform": [
+  "layer": [
     {
-      "lookup": "properties.STATE",
-      "from": {
-        "data": {"url": "../processed_data/drfa_state_map.csv"},
-        "key": "state_code",
-        "fields": ["state", "state_abbr", "activations"]
+      "transform": [
+        {
+          "lookup": "properties.STATE",
+          "from": {
+            "data": {"url": "../processed_data/drfa_state_map.csv"},
+            "key": "state_code",
+            "fields": ["state", "state_abbr", "activations"]
+          }
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "#fffaf1", "strokeWidth": 0.6},
+      "encoding": {
+        "color": {
+          "field": "activations",
+          "type": "quantitative",
+          "title": "Activations",
+          "scale": {"scheme": "orangered"},
+          "legend": {"orient": "bottom", "direction": "horizontal"}
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"x1": 306, "y1": 176, "x2": 360, "y2": 156, "label": "QLD 1,643"},
+          {"x1": 318, "y1": 232, "x2": 360, "y2": 216, "label": "NSW 1,919"}
+        ]
+      },
+      "mark": {"type": "rule", "stroke": "#8e3423", "strokeWidth": 1.1, "opacity": 0.7},
+      "encoding": {
+        "x": {"field": "x1", "type": "quantitative", "axis": null, "scale": {"domain": [0, 460], "range": [0, 460]}},
+        "y": {"field": "y1", "type": "quantitative", "axis": null, "scale": {"domain": [0, 390], "range": [0, 390]}},
+        "x2": {"field": "x2"},
+        "y2": {"field": "y2"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"x": 364, "y": 156, "label": "QLD 1,643"},
+          {"x": 364, "y": 216, "label": "NSW 1,919"}
+        ]
+      },
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "font": "Trebuchet MS", "fontSize": 13, "fontWeight": "bold", "color": "#8e3423"},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [0, 460], "range": [0, 460]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [0, 390], "range": [0, 390]}},
+        "text": {"field": "label", "type": "nominal"}
       }
     }
   ],
-  "mark": {"type": "geoshape", "stroke": "#fffaf1", "strokeWidth": 0.6},
-  "encoding": {
-    "color": {
-      "field": "activations",
-      "type": "quantitative",
-      "title": "Activations",
-      "scale": {"scheme": "orangered"},
-      "legend": {"orient": "bottom", "direction": "horizontal"}
-    },
-    "tooltip": [
-      {"field": "state", "type": "nominal", "title": "State"},
-      {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
-    ]
-  },
   "config": {
     "background": null,
     "legend": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS"},

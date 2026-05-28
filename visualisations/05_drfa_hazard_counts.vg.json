@@ -18,7 +18,7 @@
     {"calculate": "0", "as": "zero_y"},
     {"calculate": "cos(datum.angle) * datum.radius", "as": "x"},
     {"calculate": "sin(datum.angle) * datum.radius", "as": "y"},
-    {"calculate": "datum.hazard_group == 'Flood / Rainfall' ? 'Flood / rainfall makes up over half of all DRFA activations.' : ''", "as": "annotation"}
+    {"calculate": "datum.hazard_group == 'Flood / Rainfall' ? 'Flood / rainfall: 3,377 activations, about 56% of DRFA records.' : ''", "as": "annotation"}
   ],
   "layer": [
     {
@@ -72,6 +72,20 @@
         "x": {"value": 22},
         "y": {"value": 305},
         "text": {"field": "annotation", "type": "nominal"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"x": 46, "y": -58, "label": "Flood / Rainfall"},
+          {"x": 46, "y": -48, "label": "3,377 activations"}
+        ]
+      },
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "font": "Trebuchet MS", "fontSize": 12, "fontWeight": "bold", "color": "#246a8d"},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-78, 82], "range": [15, 415]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-78, 78], "range": [330, 28]}},
+        "text": {"field": "label", "type": "nominal"}
       }
     }
   ],
