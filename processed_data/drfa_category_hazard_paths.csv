@@ -1,0 +1,376 @@
+pair,category,hazard_group,raw_hazard_group,activations,step,x,y
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,0,-0.866,0.5
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,1,-0.8187,0.452
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,2,-0.7692,0.4022
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,3,-0.7176,0.3505
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,4,-0.6637,0.2969
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,5,-0.6075,0.2416
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,6,-0.5491,0.1847
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,7,-0.4886,0.1262
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,8,-0.4263,0.0665
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,9,-0.3623,0.0059
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,10,-0.297,-0.0554
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,11,-0.2307,-0.1171
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,12,-0.1638,-0.1787
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,13,-0.0965,-0.2401
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,14,-0.0293,-0.3007
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,15,0.0375,-0.3604
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,16,0.1034,-0.4189
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,17,0.1683,-0.4758
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,18,0.2318,-0.5309
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,19,0.2937,-0.5841
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,20,0.3537,-0.6353
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,21,0.4117,-0.6843
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,22,0.4677,-0.7312
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,23,0.5216,-0.7762
+unknown|Flood / Rainfall,Unclassified,Flood / Rain,Flood / Rainfall,1824,24,0.5736,-0.8192
+unknown|Storm,Unclassified,Storm,Storm,469,0,-0.866,0.5
+unknown|Storm,Unclassified,Storm,Storm,469,1,-0.8032,0.4722
+unknown|Storm,Unclassified,Storm,Storm,469,2,-0.7378,0.4432
+unknown|Storm,Unclassified,Storm,Storm,469,3,-0.6697,0.4129
+unknown|Storm,Unclassified,Storm,Storm,469,4,-0.599,0.3812
+unknown|Storm,Unclassified,Storm,Storm,469,5,-0.5256,0.3483
+unknown|Storm,Unclassified,Storm,Storm,469,6,-0.4498,0.3141
+unknown|Storm,Unclassified,Storm,Storm,469,7,-0.3717,0.2786
+unknown|Storm,Unclassified,Storm,Storm,469,8,-0.2916,0.2421
+unknown|Storm,Unclassified,Storm,Storm,469,9,-0.2098,0.2047
+unknown|Storm,Unclassified,Storm,Storm,469,10,-0.1268,0.1664
+unknown|Storm,Unclassified,Storm,Storm,469,11,-0.043,0.1276
+unknown|Storm,Unclassified,Storm,Storm,469,12,0.0413,0.0885
+unknown|Storm,Unclassified,Storm,Storm,469,13,0.1254,0.0491
+unknown|Storm,Unclassified,Storm,Storm,469,14,0.209,0.0098
+unknown|Storm,Unclassified,Storm,Storm,469,15,0.2917,-0.0292
+unknown|Storm,Unclassified,Storm,Storm,469,16,0.3729,-0.0677
+unknown|Storm,Unclassified,Storm,Storm,469,17,0.4523,-0.1056
+unknown|Storm,Unclassified,Storm,Storm,469,18,0.5297,-0.1427
+unknown|Storm,Unclassified,Storm,Storm,469,19,0.6047,-0.1788
+unknown|Storm,Unclassified,Storm,Storm,469,20,0.6771,-0.2138
+unknown|Storm,Unclassified,Storm,Storm,469,21,0.7468,-0.2476
+unknown|Storm,Unclassified,Storm,Storm,469,22,0.8137,-0.2803
+unknown|Storm,Unclassified,Storm,Storm,469,23,0.878,-0.3117
+unknown|Storm,Unclassified,Storm,Storm,469,24,0.9397,-0.342
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,0,-0.866,0.5
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,1,-0.8032,0.5011
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,2,-0.7378,0.502
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,3,-0.6697,0.5023
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,4,-0.599,0.5021
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,5,-0.5256,0.5012
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,6,-0.4498,0.4996
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,7,-0.3717,0.4971
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,8,-0.2916,0.4938
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,9,-0.2098,0.4896
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,10,-0.1268,0.4845
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,11,-0.043,0.4785
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,12,0.0413,0.4715
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,13,0.1254,0.4637
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,14,0.209,0.4551
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,15,0.2917,0.4457
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,16,0.3729,0.4357
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,17,0.4523,0.425
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,18,0.5297,0.4139
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,19,0.6047,0.4023
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,20,0.6771,0.3905
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,21,0.7468,0.3784
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,22,0.8137,0.3662
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,23,0.878,0.3541
+unknown|Bushfire,Unclassified,Bushfire,Bushfire,421,24,0.9397,0.342
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,0,-0.866,0.5
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,1,-0.8187,0.5213
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,2,-0.7692,0.543
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,3,-0.7176,0.5647
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,4,-0.6637,0.5864
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,5,-0.6075,0.6079
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,6,-0.5491,0.629
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,7,-0.4886,0.6495
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,8,-0.4263,0.6694
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,9,-0.3623,0.6884
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,10,-0.297,0.7063
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,11,-0.2307,0.7232
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,12,-0.1638,0.7387
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,13,-0.0965,0.7529
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,14,-0.0293,0.7657
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,15,0.0375,0.777
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,16,0.1034,0.7868
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,17,0.1683,0.7952
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,18,0.2318,0.8021
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,19,0.2937,0.8076
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,20,0.3537,0.8119
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,21,0.4117,0.815
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,22,0.4677,0.8172
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,23,0.5216,0.8185
+unknown|Cyclone / Tropical Low,Unclassified,Cyclone,Cyclone / Tropical Low,198,24,0.5736,0.8192
+unknown|Other,Unclassified,Other,Other,37,0,-0.866,0.5
+unknown|Other,Unclassified,Other,Other,37,1,-0.8429,0.529
+unknown|Other,Unclassified,Other,Other,37,2,-0.8185,0.5585
+unknown|Other,Unclassified,Other,Other,37,3,-0.7926,0.5883
+unknown|Other,Unclassified,Other,Other,37,4,-0.765,0.6183
+unknown|Other,Unclassified,Other,Other,37,5,-0.7357,0.6483
+unknown|Other,Unclassified,Other,Other,37,6,-0.7046,0.678
+unknown|Other,Unclassified,Other,Other,37,7,-0.6718,0.7073
+unknown|Other,Unclassified,Other,Other,37,8,-0.6374,0.7359
+unknown|Other,Unclassified,Other,Other,37,9,-0.6013,0.7637
+unknown|Other,Unclassified,Other,Other,37,10,-0.5637,0.7904
+unknown|Other,Unclassified,Other,Other,37,11,-0.5249,0.8159
+unknown|Other,Unclassified,Other,Other,37,12,-0.485,0.84
+unknown|Other,Unclassified,Other,Other,37,13,-0.4442,0.8625
+unknown|Other,Unclassified,Other,Other,37,14,-0.4027,0.8834
+unknown|Other,Unclassified,Other,Other,37,15,-0.3608,0.9026
+unknown|Other,Unclassified,Other,Other,37,16,-0.3187,0.9199
+unknown|Other,Unclassified,Other,Other,37,17,-0.2766,0.9355
+unknown|Other,Unclassified,Other,Other,37,18,-0.2349,0.9492
+unknown|Other,Unclassified,Other,Other,37,19,-0.1936,0.9613
+unknown|Other,Unclassified,Other,Other,37,20,-0.153,0.9717
+unknown|Other,Unclassified,Other,Other,37,21,-0.1132,0.9806
+unknown|Other,Unclassified,Other,Other,37,22,-0.0744,0.9881
+unknown|Other,Unclassified,Other,Other,37,23,-0.0366,0.9945
+unknown|Other,Unclassified,Other,Other,37,24,0.0,1.0
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,0,-1.0,0.0
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,1,-0.9491,-0.0347
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,2,-0.8959,-0.0704
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,3,-0.8402,-0.1071
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,4,-0.782,-0.1447
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,5,-0.7213,-0.1831
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,6,-0.6581,-0.2222
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,7,-0.5925,-0.2617
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,8,-0.5249,-0.3014
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,9,-0.4554,-0.3412
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,10,-0.3843,-0.3809
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,11,-0.3119,-0.4201
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,12,-0.2388,-0.4587
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,13,-0.1652,-0.4965
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,14,-0.0916,-0.5332
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,15,-0.0183,-0.5687
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,16,0.0541,-0.6029
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,17,0.1255,-0.6355
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,18,0.1955,-0.6665
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,19,0.2637,-0.6959
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,20,0.33,-0.7236
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,21,0.3942,-0.7497
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,22,0.4562,-0.7742
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,23,0.516,-0.7973
+A/B|Flood / Rainfall,A/B,Flood / Rain,Flood / Rainfall,771,24,0.5736,-0.8192
+A/B|Storm,A/B,Storm,Storm,550,0,-1.0,0.0
+A/B|Storm,A/B,Storm,Storm,550,1,-0.9336,-0.0145
+A/B|Storm,A/B,Storm,Storm,550,2,-0.8644,-0.0294
+A/B|Storm,A/B,Storm,Storm,550,3,-0.7923,-0.0447
+A/B|Storm,A/B,Storm,Storm,550,4,-0.7173,-0.0604
+A/B|Storm,A/B,Storm,Storm,550,5,-0.6394,-0.0765
+A/B|Storm,A/B,Storm,Storm,550,6,-0.5588,-0.0928
+A/B|Storm,A/B,Storm,Storm,550,7,-0.4756,-0.1093
+A/B|Storm,A/B,Storm,Storm,550,8,-0.3902,-0.1259
+A/B|Storm,A/B,Storm,Storm,550,9,-0.3028,-0.1425
+A/B|Storm,A/B,Storm,Storm,550,10,-0.214,-0.159
+A/B|Storm,A/B,Storm,Storm,550,11,-0.1242,-0.1754
+A/B|Storm,A/B,Storm,Storm,550,12,-0.0338,-0.1915
+A/B|Storm,A/B,Storm,Storm,550,13,0.0567,-0.2073
+A/B|Storm,A/B,Storm,Storm,550,14,0.1467,-0.2226
+A/B|Storm,A/B,Storm,Storm,550,15,0.2358,-0.2375
+A/B|Storm,A/B,Storm,Storm,550,16,0.3236,-0.2517
+A/B|Storm,A/B,Storm,Storm,550,17,0.4095,-0.2653
+A/B|Storm,A/B,Storm,Storm,550,18,0.4934,-0.2783
+A/B|Storm,A/B,Storm,Storm,550,19,0.5747,-0.2905
+A/B|Storm,A/B,Storm,Storm,550,20,0.6534,-0.3021
+A/B|Storm,A/B,Storm,Storm,550,21,0.7292,-0.313
+A/B|Storm,A/B,Storm,Storm,550,22,0.8022,-0.3233
+A/B|Storm,A/B,Storm,Storm,550,23,0.8723,-0.3329
+A/B|Storm,A/B,Storm,Storm,550,24,0.9397,-0.342
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,0,-1.0,0.0
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,1,-0.9336,0.0145
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,2,-0.8644,0.0294
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,3,-0.7923,0.0447
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,4,-0.7173,0.0604
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,5,-0.6394,0.0765
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,6,-0.5588,0.0928
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,7,-0.4756,0.1093
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,8,-0.3902,0.1259
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,9,-0.3028,0.1425
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,10,-0.214,0.159
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,11,-0.1242,0.1754
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,12,-0.0338,0.1915
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,13,0.0567,0.2073
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,14,0.1467,0.2226
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,15,0.2358,0.2375
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,16,0.3236,0.2517
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,17,0.4095,0.2653
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,18,0.4934,0.2783
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,19,0.5747,0.2905
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,20,0.6534,0.3021
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,21,0.7292,0.313
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,22,0.8022,0.3233
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,23,0.8723,0.3329
+A/B|Bushfire,A/B,Bushfire,Bushfire,321,24,0.9397,0.342
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,0,-1.0,0.0
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,1,-0.9491,0.0347
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,2,-0.8959,0.0704
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,3,-0.8402,0.1071
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,4,-0.782,0.1447
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,5,-0.7213,0.1831
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,6,-0.6581,0.2222
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,7,-0.5925,0.2617
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,8,-0.5249,0.3014
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,9,-0.4554,0.3412
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,10,-0.3843,0.3809
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,11,-0.3119,0.4201
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,12,-0.2388,0.4587
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,13,-0.1652,0.4965
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,14,-0.0916,0.5332
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,15,-0.0183,0.5687
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,16,0.0541,0.6029
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,17,0.1255,0.6355
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,18,0.1955,0.6665
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,19,0.2637,0.6959
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,20,0.33,0.7236
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,21,0.3942,0.7497
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,22,0.4562,0.7742
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,23,0.516,0.7973
+A/B|Cyclone / Tropical Low,A/B,Cyclone,Cyclone / Tropical Low,175,24,0.5736,0.8192
+A/B|Other,A/B,Other,Other,26,0,-1.0,0.0
+A/B|Other,A/B,Other,Other,26,1,-0.9733,0.0423
+A/B|Other,A/B,Other,Other,26,2,-0.9451,0.0859
+A/B|Other,A/B,Other,Other,26,3,-0.9152,0.1307
+A/B|Other,A/B,Other,Other,26,4,-0.8833,0.1767
+A/B|Other,A/B,Other,Other,26,5,-0.8495,0.2236
+A/B|Other,A/B,Other,Other,26,6,-0.8136,0.2712
+A/B|Other,A/B,Other,Other,26,7,-0.7758,0.3194
+A/B|Other,A/B,Other,Other,26,8,-0.7359,0.368
+A/B|Other,A/B,Other,Other,26,9,-0.6943,0.4166
+A/B|Other,A/B,Other,Other,26,10,-0.6509,0.465
+A/B|Other,A/B,Other,Other,26,11,-0.6061,0.5129
+A/B|Other,A/B,Other,Other,26,12,-0.56,0.56
+A/B|Other,A/B,Other,Other,26,13,-0.5129,0.6061
+A/B|Other,A/B,Other,Other,26,14,-0.465,0.6509
+A/B|Other,A/B,Other,Other,26,15,-0.4166,0.6943
+A/B|Other,A/B,Other,Other,26,16,-0.368,0.7359
+A/B|Other,A/B,Other,Other,26,17,-0.3194,0.7758
+A/B|Other,A/B,Other,Other,26,18,-0.2712,0.8136
+A/B|Other,A/B,Other,Other,26,19,-0.2236,0.8495
+A/B|Other,A/B,Other,Other,26,20,-0.1767,0.8833
+A/B|Other,A/B,Other,Other,26,21,-0.1307,0.9152
+A/B|Other,A/B,Other,Other,26,22,-0.0859,0.9451
+A/B|Other,A/B,Other,Other,26,23,-0.0423,0.9733
+A/B|Other,A/B,Other,Other,26,24,0.0,1.0
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,0,-0.866,-0.5
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,1,-0.8187,-0.5213
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,2,-0.7692,-0.543
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,3,-0.7176,-0.5647
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,4,-0.6637,-0.5864
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,5,-0.6075,-0.6079
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,6,-0.5491,-0.629
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,7,-0.4886,-0.6495
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,8,-0.4263,-0.6694
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,9,-0.3623,-0.6884
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,10,-0.297,-0.7063
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,11,-0.2307,-0.7232
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,12,-0.1638,-0.7387
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,13,-0.0965,-0.7529
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,14,-0.0293,-0.7657
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,15,0.0375,-0.777
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,16,0.1034,-0.7868
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,17,0.1683,-0.7952
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,18,0.2318,-0.8021
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,19,0.2937,-0.8076
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,20,0.3537,-0.8119
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,21,0.4117,-0.815
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,22,0.4677,-0.8172
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,23,0.5216,-0.8185
+C/D|Flood / Rainfall,C/D,Flood / Rain,Flood / Rainfall,782,24,0.5736,-0.8192
+C/D|Storm,C/D,Storm,Storm,113,0,-0.866,-0.5
+C/D|Storm,C/D,Storm,Storm,113,1,-0.8032,-0.5011
+C/D|Storm,C/D,Storm,Storm,113,2,-0.7378,-0.502
+C/D|Storm,C/D,Storm,Storm,113,3,-0.6697,-0.5023
+C/D|Storm,C/D,Storm,Storm,113,4,-0.599,-0.5021
+C/D|Storm,C/D,Storm,Storm,113,5,-0.5256,-0.5012
+C/D|Storm,C/D,Storm,Storm,113,6,-0.4498,-0.4996
+C/D|Storm,C/D,Storm,Storm,113,7,-0.3717,-0.4971
+C/D|Storm,C/D,Storm,Storm,113,8,-0.2916,-0.4938
+C/D|Storm,C/D,Storm,Storm,113,9,-0.2098,-0.4896
+C/D|Storm,C/D,Storm,Storm,113,10,-0.1268,-0.4845
+C/D|Storm,C/D,Storm,Storm,113,11,-0.043,-0.4785
+C/D|Storm,C/D,Storm,Storm,113,12,0.0413,-0.4715
+C/D|Storm,C/D,Storm,Storm,113,13,0.1254,-0.4637
+C/D|Storm,C/D,Storm,Storm,113,14,0.209,-0.4551
+C/D|Storm,C/D,Storm,Storm,113,15,0.2917,-0.4457
+C/D|Storm,C/D,Storm,Storm,113,16,0.3729,-0.4357
+C/D|Storm,C/D,Storm,Storm,113,17,0.4523,-0.425
+C/D|Storm,C/D,Storm,Storm,113,18,0.5297,-0.4139
+C/D|Storm,C/D,Storm,Storm,113,19,0.6047,-0.4023
+C/D|Storm,C/D,Storm,Storm,113,20,0.6771,-0.3905
+C/D|Storm,C/D,Storm,Storm,113,21,0.7468,-0.3784
+C/D|Storm,C/D,Storm,Storm,113,22,0.8137,-0.3662
+C/D|Storm,C/D,Storm,Storm,113,23,0.878,-0.3541
+C/D|Storm,C/D,Storm,Storm,113,24,0.9397,-0.342
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,0,-0.866,-0.5
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,1,-0.8032,-0.4722
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,2,-0.7378,-0.4432
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,3,-0.6697,-0.4129
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,4,-0.599,-0.3812
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,5,-0.5256,-0.3483
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,6,-0.4498,-0.3141
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,7,-0.3717,-0.2786
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,8,-0.2916,-0.2421
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,9,-0.2098,-0.2047
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,10,-0.1268,-0.1664
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,11,-0.043,-0.1276
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,12,0.0413,-0.0885
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,13,0.1254,-0.0491
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,14,0.209,-0.0098
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,15,0.2917,0.0292
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,16,0.3729,0.0677
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,17,0.4523,0.1056
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,18,0.5297,0.1427
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,19,0.6047,0.1788
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,20,0.6771,0.2138
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,21,0.7468,0.2476
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,22,0.8137,0.2803
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,23,0.878,0.3117
+C/D|Bushfire,C/D,Bushfire,Bushfire,212,24,0.9397,0.342
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,0,-0.866,-0.5
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,1,-0.8187,-0.452
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,2,-0.7692,-0.4022
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,3,-0.7176,-0.3505
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,4,-0.6637,-0.2969
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,5,-0.6075,-0.2416
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,6,-0.5491,-0.1847
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,7,-0.4886,-0.1262
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,8,-0.4263,-0.0665
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,9,-0.3623,-0.0059
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,10,-0.297,0.0554
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,11,-0.2307,0.1171
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,12,-0.1638,0.1787
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,13,-0.0965,0.2401
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,14,-0.0293,0.3007
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,15,0.0375,0.3604
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,16,0.1034,0.4189
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,17,0.1683,0.4758
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,18,0.2318,0.5309
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,19,0.2937,0.5841
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,20,0.3537,0.6353
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,21,0.4117,0.6843
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,22,0.4677,0.7312
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,23,0.5216,0.7762
+C/D|Cyclone / Tropical Low,C/D,Cyclone,Cyclone / Tropical Low,85,24,0.5736,0.8192
+C/D|Other,C/D,Other,Other,9,0,-0.866,-0.5
+C/D|Other,C/D,Other,Other,9,1,-0.8429,-0.4444
+C/D|Other,C/D,Other,Other,9,2,-0.8185,-0.3866
+C/D|Other,C/D,Other,Other,9,3,-0.7926,-0.3269
+C/D|Other,C/D,Other,Other,9,4,-0.765,-0.265
+C/D|Other,C/D,Other,Other,9,5,-0.7357,-0.2012
+C/D|Other,C/D,Other,Other,9,6,-0.7046,-0.1356
+C/D|Other,C/D,Other,Other,9,7,-0.6718,-0.0685
+C/D|Other,C/D,Other,Other,9,8,-0.6374,-0.0
+C/D|Other,C/D,Other,Other,9,9,-0.6013,0.0694
+C/D|Other,C/D,Other,Other,9,10,-0.5637,0.1395
+C/D|Other,C/D,Other,Other,9,11,-0.5249,0.2098
+C/D|Other,C/D,Other,Other,9,12,-0.485,0.28
+C/D|Other,C/D,Other,Other,9,13,-0.4442,0.3497
+C/D|Other,C/D,Other,Other,9,14,-0.4027,0.4185
+C/D|Other,C/D,Other,Other,9,15,-0.3608,0.486
+C/D|Other,C/D,Other,Other,9,16,-0.3187,0.552
+C/D|Other,C/D,Other,Other,9,17,-0.2766,0.6161
+C/D|Other,C/D,Other,Other,9,18,-0.2349,0.678
+C/D|Other,C/D,Other,Other,9,19,-0.1936,0.7377
+C/D|Other,C/D,Other,Other,9,20,-0.153,0.795
+C/D|Other,C/D,Other,Other,9,21,-0.1132,0.8498
+C/D|Other,C/D,Other,Other,9,22,-0.0744,0.9022
+C/D|Other,C/D,Other,Other,9,23,-0.0366,0.9522
+C/D|Other,C/D,Other,Other,9,24,0.0,1.0

@@ -1,78 +1,81 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 420,
-  "height": 390,
+  "width": 430,
+  "height": 405,
   "title": {
-    "text": "DRFA category weight",
-    "subtitle": "Circle area compares activation volume."
+    "text": "DRFA category x hazard links",
+    "subtitle": "Curve width shows how recovery categories connect to hazard groups."
   },
-  "data": {"url": "../processed_data/drfa_category_counts.csv"},
-  "transform": [
-    {
-      "calculate": "datum.category == 'unknown' ? 'Unclassified' : datum.category",
-      "as": "category_label"
-    }
-  ],
   "layer": [
     {
-      "mark": {"type": "circle", "opacity": 0.86, "stroke": "#fffaf1", "strokeWidth": 2},
+      "data": {"url": "../processed_data/drfa_category_hazard_paths.csv"},
+      "mark": {"type": "line", "interpolate": "basis", "opacity": 0.48},
       "encoding": {
-        "x": {
-          "field": "category_label",
-          "type": "nominal",
-          "title": null,
-          "sort": ["Unclassified", "A/B", "C/D"]
-        },
-        "y": {"value": 150},
-        "size": {
-          "field": "activations",
-          "type": "quantitative",
-          "title": "Activations",
-          "scale": {"range": [4500, 23000]},
-          "legend": null
-        },
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-1.18, 1.18], "range": [18, 412]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-1.12, 1.12], "range": [372, 34]}},
+        "detail": {"field": "pair", "type": "nominal"},
+        "order": {"field": "step", "type": "quantitative"},
+        "strokeWidth": {"field": "activations", "type": "quantitative", "scale": {"range": [0.8, 15]}, "legend": null},
         "color": {
-          "field": "category",
+          "field": "raw_hazard_group",
           "type": "nominal",
-          "legend": null,
+          "title": "Hazard",
           "scale": {
-            "domain": ["unknown", "A/B", "C/D"],
-            "range": ["#8b7a62", "#246a8d", "#c85a2e"]
+            "domain": ["Flood / Rainfall", "Storm", "Bushfire", "Cyclone / Tropical Low", "Other"],
+            "range": ["#246a8d", "#6c5f9f", "#c85a2e", "#5f7fa3", "#8b7a62"]
+          },
+          "legend": {
+            "orient": "bottom",
+            "columns": 2,
+            "labelExpr": "datum.label == 'Flood / Rainfall' ? 'Flood / Rain' : datum.label == 'Cyclone / Tropical Low' ? 'Cyclone' : datum.label"
           }
         },
         "tooltip": [
-          {"field": "category", "type": "nominal", "title": "Category"},
+          {"field": "category", "type": "nominal", "title": "DRFA category"},
+          {"field": "hazard_group", "type": "nominal", "title": "Hazard"},
           {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
         ]
       }
     },
     {
-      "mark": {"type": "text", "align": "center", "baseline": "middle", "font": "Georgia", "fontSize": 22, "fontWeight": "bold", "color": "#fffaf1"},
+      "data": {"url": "../processed_data/drfa_category_hazard_nodes.csv"},
+      "mark": {"type": "circle", "opacity": 0.92, "stroke": "#fffaf1", "strokeWidth": 2},
       "encoding": {
-        "x": {"field": "category_label", "type": "nominal", "sort": ["Unclassified", "A/B", "C/D"]},
-        "y": {"value": 145},
-        "text": {
-          "field": "activations",
-          "type": "quantitative",
-          "format": ","
-        }
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-1.18, 1.18], "range": [18, 412]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-1.12, 1.12], "range": [372, 34]}},
+        "size": {"field": "total", "type": "quantitative", "scale": {"range": [250, 2600]}, "legend": null},
+        "color": {
+          "field": "node_type",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": ["DRFA category", "Hazard group"],
+            "range": ["#8b7a62", "#246a8d"]
+          }
+        },
+        "tooltip": [
+          {"field": "node", "type": "nominal", "title": "Node"},
+          {"field": "node_type", "type": "nominal", "title": "Type"},
+          {"field": "total", "type": "quantitative", "title": "Total", "format": ","}
+        ]
       }
     },
     {
-      "mark": {"type": "text", "align": "center", "baseline": "top", "dy": 88, "font": "Trebuchet MS", "fontSize": 15, "fontWeight": "bold", "color": "#18211d"},
+      "data": {"url": "../processed_data/drfa_category_hazard_nodes.csv"},
+      "mark": {"type": "text", "font": "Trebuchet MS", "fontSize": 13, "fontWeight": "bold", "color": "#18211d", "dy": -16},
       "encoding": {
-        "x": {"field": "category_label", "type": "nominal", "sort": ["Unclassified", "A/B", "C/D"]},
-        "y": {"value": 150},
-        "text": {
-          "field": "category_label",
-          "type": "nominal"
-        }
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-1.18, 1.18], "range": [18, 412]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-1.12, 1.12], "range": [372, 34]}},
+        "text": {"field": "node", "type": "nominal"}
       }
     }
   ],
+  "resolve": {
+    "scale": {"color": "independent"}
+  },
   "config": {
     "background": null,
-    "axis": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS", "grid": false, "ticks": false, "domain": false},
+    "legend": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS"},
     "title": {"font": "Georgia", "fontSize": 17, "subtitleFont": "Trebuchet MS", "subtitleFontSize": 12, "anchor": "start"},
     "view": {"stroke": null}
   }

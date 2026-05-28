@@ -1,0 +1,16 @@
+category,hazard_group,activations
+A/B,Bushfire,321
+A/B,Cyclone / Tropical Low,175
+A/B,Flood / Rainfall,771
+A/B,Other,26
+A/B,Storm,550
+C/D,Bushfire,212
+C/D,Cyclone / Tropical Low,85
+C/D,Flood / Rainfall,782
+C/D,Other,9
+C/D,Storm,113
+unknown,Bushfire,421
+unknown,Cyclone / Tropical Low,198
+unknown,Flood / Rainfall,1824
+unknown,Other,37
+unknown,Storm,469

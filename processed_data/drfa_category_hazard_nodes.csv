@@ -1,0 +1,9 @@
+node,raw_node,node_type,total,x,y
+Unclassified,unknown,DRFA category,2949,-0.866,0.5
+A/B,A/B,DRFA category,1843,-1.0,0.0
+C/D,C/D,DRFA category,1201,-0.866,-0.5
+Flood / Rain,Flood / Rainfall,Hazard group,3377,0.5736,-0.8192
+Storm,Storm,Hazard group,1132,0.9397,-0.342
+Bushfire,Bushfire,Hazard group,954,0.9397,0.342
+Cyclone,Cyclone / Tropical Low,Hazard group,458,0.5736,0.8192
+Other,Other,Hazard group,72,0.0,1.0

@@ -1,54 +1,76 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 360,
-  "height": 255,
+  "width": 430,
+  "height": 345,
   "title": {
     "text": "Recovery activations by hazard share",
-    "subtitle": "Each tile is roughly one percent of activations."
+    "subtitle": "Radial spokes show relative activation volume."
   },
-  "data": {
-    "sequence": {"start": 0, "stop": 100, "step": 1, "as": "tile"}
-  },
+  "data": {"url": "../processed_data/drfa_hazard_counts.csv"},
   "transform": [
     {
-      "calculate": "datum.tile < 56 ? 'Flood / Rainfall' : datum.tile < 75 ? 'Storm' : datum.tile < 91 ? 'Bushfire' : datum.tile < 99 ? 'Cyclone / Tropical Low' : 'Other'",
-      "as": "hazard_group"
+      "window": [{"op": "row_number", "as": "rank"}],
+      "sort": [{"field": "activations", "order": "descending"}]
     },
-    {
-      "calculate": "datum.hazard_group == 'Flood / Rainfall' ? 3377 : datum.hazard_group == 'Storm' ? 1132 : datum.hazard_group == 'Bushfire' ? 954 : datum.hazard_group == 'Cyclone / Tropical Low' ? 458 : 72",
-      "as": "activations"
-    },
-    {
-      "calculate": "datum.hazard_group == 'Flood / Rainfall' ? '56%' : datum.hazard_group == 'Storm' ? '19%' : datum.hazard_group == 'Bushfire' ? '16%' : datum.hazard_group == 'Cyclone / Tropical Low' ? '8%' : '1%'",
-      "as": "share"
-    },
-    {"calculate": "datum.tile % 20", "as": "x"},
-    {"calculate": "floor(datum.tile / 20)", "as": "y"}
+    {"calculate": "-1.25 + (datum.rank - 1) * 0.625", "as": "angle"},
+    {"calculate": "sqrt(datum.activations)", "as": "radius"},
+    {"calculate": "0", "as": "zero_x"},
+    {"calculate": "0", "as": "zero_y"},
+    {"calculate": "cos(datum.angle) * datum.radius", "as": "x"},
+    {"calculate": "sin(datum.angle) * datum.radius", "as": "y"},
+    {"calculate": "cos(datum.angle) * (datum.radius + 10)", "as": "label_x"},
+    {"calculate": "sin(datum.angle) * (datum.radius + 10)", "as": "label_y"},
+    {"calculate": "datum.hazard_group == 'Flood / Rainfall' ? 'Flood / Rain' : datum.hazard_group == 'Cyclone / Tropical Low' ? 'Cyclone' : datum.hazard_group", "as": "hazard_label"}
   ],
-  "mark": {"type": "square", "size": 150, "filled": true},
-  "encoding": {
-    "x": {"field": "x", "type": "ordinal", "axis": null},
-    "y": {"field": "y", "type": "ordinal", "sort": "descending", "axis": null},
-    "color": {
-      "field": "hazard_group",
-      "type": "nominal",
-      "title": "Hazard",
-      "scale": {
-        "domain": ["Flood / Rainfall", "Storm", "Bushfire", "Cyclone / Tropical Low", "Other"],
-        "range": ["#246a8d", "#6c5f9f", "#c85a2e", "#5f7fa3", "#8b7a62"]
-      },
-      "legend": {
-        "orient": "bottom",
-        "columns": 2,
-        "labelExpr": "datum.label == 'Flood / Rainfall' ? 'Flood / Rain' : datum.label == 'Cyclone / Tropical Low' ? 'Cyclone' : datum.label"
+  "layer": [
+    {
+      "mark": {"type": "rule", "strokeWidth": 2.2, "opacity": 0.58},
+      "encoding": {
+        "x": {"field": "zero_x", "type": "quantitative", "axis": null, "scale": {"domain": [-70, 70], "range": [15, 415]}},
+        "y": {"field": "zero_y", "type": "quantitative", "axis": null, "scale": {"domain": [-70, 70], "range": [330, 28]}},
+        "x2": {"field": "x", "type": "quantitative", "scale": {"domain": [-70, 70], "range": [15, 415]}},
+        "y2": {"field": "y", "type": "quantitative", "scale": {"domain": [-70, 70], "range": [330, 28]}},
+        "color": {
+          "field": "hazard_group",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": ["Flood / Rainfall", "Storm", "Bushfire", "Cyclone / Tropical Low", "Other"],
+            "range": ["#246a8d", "#6c5f9f", "#c85a2e", "#5f7fa3", "#8b7a62"]
+          }
+        }
       }
     },
-    "tooltip": [
-      {"field": "hazard_group", "type": "nominal", "title": "Hazard"},
-      {"field": "share", "type": "nominal", "title": "Approx. share"},
-      {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
-    ]
-  },
+    {
+      "mark": {"type": "circle", "opacity": 0.88, "stroke": "#fffaf1", "strokeWidth": 2},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-70, 70], "range": [15, 415]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-70, 70], "range": [330, 28]}},
+        "size": {"field": "activations", "type": "quantitative", "scale": {"range": [260, 5200]}, "legend": null},
+        "color": {
+          "field": "hazard_group",
+          "type": "nominal",
+          "title": "Hazard",
+          "scale": {
+            "domain": ["Flood / Rainfall", "Storm", "Bushfire", "Cyclone / Tropical Low", "Other"],
+            "range": ["#246a8d", "#6c5f9f", "#c85a2e", "#5f7fa3", "#8b7a62"]
+          }
+        },
+        "tooltip": [
+          {"field": "hazard_group", "type": "nominal", "title": "Hazard"},
+          {"field": "activations", "type": "quantitative", "title": "Activations", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "font": "Trebuchet MS", "fontSize": 13, "fontWeight": "bold", "color": "#18211d"},
+      "encoding": {
+        "x": {"field": "label_x", "type": "quantitative", "axis": null, "scale": {"domain": [-70, 70], "range": [15, 415]}},
+        "y": {"field": "label_y", "type": "quantitative", "axis": null, "scale": {"domain": [-70, 70], "range": [330, 28]}},
+        "text": {"field": "hazard_label", "type": "nominal"}
+      }
+    }
+  ],
   "config": {
     "background": null,
     "legend": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS"},

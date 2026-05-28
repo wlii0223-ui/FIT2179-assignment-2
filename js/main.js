@@ -14,7 +14,7 @@ const charts = [
   ["#historical_impact_bubble", "visualisations/13_historical_impact_bubble.vg.json"]
 ];
 
-const ASSET_VERSION = "20260525c";
+const ASSET_VERSION = "20260529a";
 
 function versionedUrl(url) {
   if (/^https?:\/\//.test(url)) {
@@ -104,7 +104,7 @@ function rewriteSpec(spec, target) {
   const fixedById = {
     historical_categories: 500,
     drfa_hazard_counts: 430,
-    drfa_category_counts: 420,
+    drfa_category_counts: 430,
     drfa_state_counts: 460,
     drfa_state_hazard: 520,
     historical_impact_bubble: 320

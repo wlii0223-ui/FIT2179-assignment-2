@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import math
 import re
 from collections import Counter, defaultdict
 from datetime import datetime
@@ -90,6 +91,7 @@ def clean_drfa() -> None:
     state_hazard = Counter()
     lga_counts = Counter()
     category_counts = Counter()
+    category_hazard = Counter()
 
     for row in rows:
         year = parse_year(row.get("disaster_start_date", ""))
@@ -118,6 +120,7 @@ def clean_drfa() -> None:
         state_hazard[(state, hazard_group)] += 1
         lga_counts[(lga, state)] += 1
         category_counts[category] += 1
+        category_hazard[(category, hazard_group)] += 1
 
     write_rows(
         OUT / "drfa_records_clean.csv",
@@ -223,6 +226,94 @@ def clean_drfa() -> None:
         OUT / "drfa_category_counts.csv",
         [{"category": category, "activations": count} for category, count in category_counts.most_common()],
         ["category", "activations"],
+    )
+    write_rows(
+        OUT / "drfa_category_hazard.csv",
+        [
+            {"category": category, "hazard_group": hazard, "activations": count}
+            for (category, hazard), count in sorted(category_hazard.items())
+        ],
+        ["category", "hazard_group", "activations"],
+    )
+
+    category_order = ["unknown", "A/B", "C/D"]
+    hazard_order = ["Flood / Rainfall", "Storm", "Bushfire", "Cyclone / Tropical Low", "Other"]
+    category_angles = {
+        "unknown": math.radians(150),
+        "A/B": math.radians(180),
+        "C/D": math.radians(210),
+    }
+    hazard_angles = {
+        "Flood / Rainfall": math.radians(-55),
+        "Storm": math.radians(-20),
+        "Bushfire": math.radians(20),
+        "Cyclone / Tropical Low": math.radians(55),
+        "Other": math.radians(90),
+    }
+
+    nodes = []
+    for category in category_order:
+        angle = category_angles[category]
+        nodes.append(
+            {
+                "node": "Unclassified" if category == "unknown" else category,
+                "raw_node": category,
+                "node_type": "DRFA category",
+                "total": category_counts[category],
+                "x": round(math.cos(angle), 4),
+                "y": round(math.sin(angle), 4),
+            }
+        )
+    for hazard in hazard_order:
+        angle = hazard_angles[hazard]
+        nodes.append(
+            {
+                "node": "Flood / Rain" if hazard == "Flood / Rainfall" else "Cyclone" if hazard == "Cyclone / Tropical Low" else hazard,
+                "raw_node": hazard,
+                "node_type": "Hazard group",
+                "total": hazard_counts[hazard],
+                "x": round(math.cos(angle), 4),
+                "y": round(math.sin(angle), 4),
+            }
+        )
+    write_rows(
+        OUT / "drfa_category_hazard_nodes.csv",
+        nodes,
+        ["node", "raw_node", "node_type", "total", "x", "y"],
+    )
+
+    chord_paths = []
+    for category in category_order:
+        start_angle = category_angles[category]
+        start = (math.cos(start_angle), math.sin(start_angle))
+        for hazard in hazard_order:
+            count = category_hazard[(category, hazard)]
+            if count == 0:
+                continue
+            end_angle = hazard_angles[hazard]
+            end = (math.cos(end_angle), math.sin(end_angle))
+            pair = f"{category}|{hazard}"
+            for step in range(25):
+                t = step / 24
+                curve = math.sin(math.pi * t) * 0.12
+                x = (1 - t) * start[0] + t * end[0]
+                y = (1 - t) * start[1] + t * end[1]
+                chord_paths.append(
+                    {
+                        "pair": pair,
+                        "category": "Unclassified" if category == "unknown" else category,
+                        "hazard_group": "Flood / Rain" if hazard == "Flood / Rainfall" else "Cyclone" if hazard == "Cyclone / Tropical Low" else hazard,
+                        "raw_hazard_group": hazard,
+                        "activations": count,
+                        "step": step,
+                        "x": round(x * (1 + curve), 4),
+                        "y": round(y * (1 + curve), 4),
+                    }
+                )
+    write_rows(
+        OUT / "drfa_category_hazard_paths.csv",
+        chord_paths,
+        ["pair", "category", "hazard_group", "raw_hazard_group", "activations", "step", "x", "y"],
     )
 
 

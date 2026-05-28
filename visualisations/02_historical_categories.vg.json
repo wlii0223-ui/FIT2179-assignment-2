@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 420,
-  "height": 300,
+  "width": 470,
+  "height": 310,
   "title": {
-    "text": "Historical event frequency grid",
-    "subtitle": "One square is about two events; hover for exact counts."
+    "text": "Historical event composition",
+    "subtitle": "One square represents about two recorded events."
   },
   "data": {
     "sequence": {"start": 0, "stop": 133, "step": 1, "as": "tile"}
@@ -21,17 +21,18 @@
     {
       "calculate": "datum.category == 'Flood' ? 64 : datum.category == 'Bushfire' ? 55 : datum.category == 'Severe Storm' ? 47 : datum.category == 'Cyclone' ? 31 : datum.category == 'Environmental' ? 30 : datum.category == 'Hail' ? 21 : datum.category == 'Earthquake' ? 5 : datum.category == 'Landslide' ? 4 : 3",
       "as": "events"
-    }
+    },
+    {"calculate": "ceil(datum.events / 2) - 1", "as": "last_unit"}
   ],
   "layer": [
     {
-      "mark": {"type": "square", "size": 88, "filled": true},
+      "mark": {"type": "square", "size": 92, "filled": true, "opacity": 0.92},
       "encoding": {
         "x": {
           "field": "unit",
           "type": "quantitative",
-          "title": "Events, approx.",
-          "axis": {"tickCount": 5, "labelExpr": "datum.value == 0 ? '0' : datum.value * 2"}
+          "axis": null,
+          "scale": {"domain": [0, 36]}
         },
         "y": {
           "field": "category",
@@ -55,18 +56,18 @@
       }
     },
     {
-      "transform": [{"filter": "datum.category == 'Flood' && datum.unit == 22"}],
-      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 8, "font": "Trebuchet MS", "fontSize": 14, "fontWeight": "bold", "color": "#fffaf1"},
+      "transform": [{"filter": "datum.unit == datum.last_unit"}],
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 12, "font": "Trebuchet MS", "fontSize": 14, "fontWeight": "bold", "color": "#18211d"},
       "encoding": {
-        "x": {"field": "unit", "type": "quantitative"},
+        "x": {"field": "unit", "type": "quantitative", "scale": {"domain": [0, 36]}},
         "y": {"field": "category", "type": "nominal", "sort": ["Flood", "Bushfire", "Severe Storm", "Cyclone", "Environmental", "Hail", "Earthquake", "Landslide", "Tornado"]},
-        "text": {"value": "most frequent"}
+        "text": {"field": "events", "type": "quantitative", "format": ".0f"}
       }
     }
   ],
   "config": {
     "background": null,
-    "axis": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS", "gridColor": "#e7dfd2", "domain": false},
+    "axis": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS", "grid": false, "domain": false},
     "title": {"font": "Georgia", "fontSize": 17, "subtitleFont": "Trebuchet MS", "subtitleFontSize": 12, "anchor": "start"},
     "view": {"stroke": null}
   }
