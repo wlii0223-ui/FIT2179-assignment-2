@@ -11,8 +11,8 @@
       "data": {"url": "../processed_data/drfa_category_hazard_paths.csv"},
       "mark": {"type": "line", "interpolate": "basis", "opacity": 0.48},
       "encoding": {
-        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-1.18, 1.18], "range": [18, 412]}},
-        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-1.12, 1.12], "range": [372, 34]}},
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-1.35, 1.35], "range": [18, 412]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-1.22, 1.22], "range": [372, 34]}},
         "detail": {"field": "pair", "type": "nominal"},
         "order": {"field": "step", "type": "quantitative"},
         "strokeWidth": {"field": "activations", "type": "quantitative", "scale": {"range": [0.8, 15]}, "legend": null},
@@ -41,8 +41,8 @@
       "data": {"url": "../processed_data/drfa_category_hazard_nodes.csv"},
       "mark": {"type": "circle", "opacity": 0.92, "stroke": "#fffaf1", "strokeWidth": 2},
       "encoding": {
-        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-1.18, 1.18], "range": [18, 412]}},
-        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-1.12, 1.12], "range": [372, 34]}},
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-1.35, 1.35], "range": [18, 412]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-1.22, 1.22], "range": [372, 34]}},
         "size": {"field": "total", "type": "quantitative", "scale": {"range": [250, 2600]}, "legend": null},
         "color": {
           "field": "node_type",
@@ -61,12 +61,32 @@
       }
     },
     {
-      "data": {"url": "../processed_data/drfa_category_hazard_nodes.csv"},
-      "mark": {"type": "text", "font": "Trebuchet MS", "fontSize": 13, "fontWeight": "bold", "color": "#18211d", "dy": -16},
+      "data": {
+        "values": [
+          {"label": "Unclassified", "x": -1.22, "y": 0.72},
+          {"label": "A/B", "x": -1.2, "y": 0.21},
+          {"label": "C/D", "x": -1.18, "y": -0.29},
+          {"label": "Other", "x": 0.08, "y": 1.12},
+          {"label": "Cyclone", "x": 0.72, "y": 0.94},
+          {"label": "Bushfire", "x": 1.07, "y": 0.46},
+          {"label": "Storm", "x": 1.07, "y": -0.24},
+          {"label": "Flood / Rain", "x": 0.48, "y": -1.03}
+        ]
+      },
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "font": "Trebuchet MS", "fontSize": 13, "fontWeight": "bold", "color": "#18211d"},
       "encoding": {
-        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-1.18, 1.18], "range": [18, 412]}},
-        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-1.12, 1.12], "range": [372, 34]}},
-        "text": {"field": "node", "type": "nominal"}
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-1.35, 1.35], "range": [18, 412]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-1.22, 1.22], "range": [372, 34]}},
+        "text": {"field": "label", "type": "nominal"}
+      }
+    },
+    {
+      "data": {"values": [{"x": -1.18, "y": -1.18, "note": "Strongest link: Unclassified -> Flood / Rain"}]},
+      "mark": {"type": "text", "align": "left", "baseline": "top", "font": "Trebuchet MS", "fontSize": 12, "fontWeight": "bold", "color": "#246a8d"},
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-1.35, 1.35], "range": [18, 412]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-1.22, 1.22], "range": [372, 34]}},
+        "text": {"field": "note", "type": "nominal"}
       }
     }
   ],

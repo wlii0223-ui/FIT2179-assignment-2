@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 430,
-  "height": 345,
+  "height": 385,
   "title": {
     "text": "Recovery activations by hazard share",
     "subtitle": "Radial spokes show relative activation volume."
@@ -18,18 +18,16 @@
     {"calculate": "0", "as": "zero_y"},
     {"calculate": "cos(datum.angle) * datum.radius", "as": "x"},
     {"calculate": "sin(datum.angle) * datum.radius", "as": "y"},
-    {"calculate": "cos(datum.angle) * (datum.radius + 10)", "as": "label_x"},
-    {"calculate": "sin(datum.angle) * (datum.radius + 10)", "as": "label_y"},
-    {"calculate": "datum.hazard_group == 'Flood / Rainfall' ? 'Flood / Rain' : datum.hazard_group == 'Cyclone / Tropical Low' ? 'Cyclone' : datum.hazard_group", "as": "hazard_label"}
+    {"calculate": "datum.hazard_group == 'Flood / Rainfall' ? 'Flood / rainfall makes up over half of all DRFA activations.' : ''", "as": "annotation"}
   ],
   "layer": [
     {
       "mark": {"type": "rule", "strokeWidth": 2.2, "opacity": 0.58},
       "encoding": {
-        "x": {"field": "zero_x", "type": "quantitative", "axis": null, "scale": {"domain": [-70, 70], "range": [15, 415]}},
-        "y": {"field": "zero_y", "type": "quantitative", "axis": null, "scale": {"domain": [-70, 70], "range": [330, 28]}},
-        "x2": {"field": "x", "type": "quantitative", "scale": {"domain": [-70, 70], "range": [15, 415]}},
-        "y2": {"field": "y", "type": "quantitative", "scale": {"domain": [-70, 70], "range": [330, 28]}},
+        "x": {"field": "zero_x", "type": "quantitative", "axis": null, "scale": {"domain": [-78, 82], "range": [15, 415]}},
+        "y": {"field": "zero_y", "type": "quantitative", "axis": null, "scale": {"domain": [-78, 78], "range": [330, 28]}},
+        "x2": {"field": "x", "type": "quantitative", "scale": {"domain": [-78, 82], "range": [15, 415]}},
+        "y2": {"field": "y", "type": "quantitative", "scale": {"domain": [-78, 78], "range": [330, 28]}},
         "color": {
           "field": "hazard_group",
           "type": "nominal",
@@ -44,8 +42,8 @@
     {
       "mark": {"type": "circle", "opacity": 0.88, "stroke": "#fffaf1", "strokeWidth": 2},
       "encoding": {
-        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-70, 70], "range": [15, 415]}},
-        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-70, 70], "range": [330, 28]}},
+        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-78, 82], "range": [15, 415]}},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-78, 78], "range": [330, 28]}},
         "size": {"field": "activations", "type": "quantitative", "scale": {"range": [260, 5200]}, "legend": null},
         "color": {
           "field": "hazard_group",
@@ -54,6 +52,11 @@
           "scale": {
             "domain": ["Flood / Rainfall", "Storm", "Bushfire", "Cyclone / Tropical Low", "Other"],
             "range": ["#246a8d", "#6c5f9f", "#c85a2e", "#5f7fa3", "#8b7a62"]
+          },
+          "legend": {
+            "orient": "bottom",
+            "columns": 3,
+            "labelExpr": "datum.label == 'Flood / Rainfall' ? 'Flood / Rain' : datum.label == 'Cyclone / Tropical Low' ? 'Cyclone' : datum.label"
           }
         },
         "tooltip": [
@@ -63,14 +66,16 @@
       }
     },
     {
-      "mark": {"type": "text", "font": "Trebuchet MS", "fontSize": 13, "fontWeight": "bold", "color": "#18211d"},
+      "transform": [{"filter": "datum.hazard_group == 'Flood / Rainfall'"}],
+      "mark": {"type": "text", "align": "left", "baseline": "top", "font": "Trebuchet MS", "fontSize": 12, "fontWeight": "bold", "color": "#246a8d"},
       "encoding": {
-        "x": {"field": "label_x", "type": "quantitative", "axis": null, "scale": {"domain": [-70, 70], "range": [15, 415]}},
-        "y": {"field": "label_y", "type": "quantitative", "axis": null, "scale": {"domain": [-70, 70], "range": [330, 28]}},
-        "text": {"field": "hazard_label", "type": "nominal"}
+        "x": {"value": 22},
+        "y": {"value": 305},
+        "text": {"field": "annotation", "type": "nominal"}
       }
     }
   ],
+  "resolve": {"scale": {"color": "independent"}},
   "config": {
     "background": null,
     "legend": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS"},

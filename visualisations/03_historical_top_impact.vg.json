@@ -21,7 +21,13 @@
       "mark": {"type": "bar", "cornerRadiusEnd": 2, "color": "#8e3423"},
       "encoding": {
         "x": {"field": "impact_value", "type": "quantitative", "title": "Impact score"},
-        "y": {"field": "short_label", "type": "nominal", "sort": "-x", "title": null, "axis": {"labelLimit": 240}},
+        "y": {
+          "field": "short_label",
+          "type": "nominal",
+          "sort": ["Cyclone Tracy", "Ash Wednesday", "Black Saturday", "Hunter Valley flood", "Heatwave 1938", "Heatwave 1939", "Heatwave 2009", "Black Tuesday"],
+          "title": null,
+          "axis": {"labelLimit": 240}
+        },
         "tooltip": [
           {"field": "title", "type": "nominal", "title": "Event"},
           {"field": "year", "type": "ordinal", "title": "Year"},
@@ -36,7 +42,11 @@
       "mark": {"type": "text", "align": "right", "baseline": "middle", "dx": -8, "font": "Trebuchet MS", "fontSize": 14, "fontWeight": "bold", "color": "#fffaf1"},
       "encoding": {
         "x": {"field": "impact_value", "type": "quantitative"},
-        "y": {"field": "short_label", "type": "nominal", "sort": "-x"},
+        "y": {
+          "field": "short_label",
+          "type": "nominal",
+          "sort": ["Cyclone Tracy", "Ash Wednesday", "Black Saturday", "Hunter Valley flood", "Heatwave 1938", "Heatwave 1939", "Heatwave 2009", "Black Tuesday"]
+        },
         "text": {"value": "largest impact score"}
       }
     }
