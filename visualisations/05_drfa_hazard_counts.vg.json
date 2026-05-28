@@ -77,19 +77,48 @@
     {
       "data": {
         "values": [
-          {"x": 46, "y": -58, "label": "Flood / Rainfall"},
-          {"x": 46, "y": -48, "label": "3,377 activations"}
+          {"x": 314, "y": 184, "label": "Circle area = activations"}
         ]
       },
-      "mark": {"type": "text", "align": "left", "baseline": "middle", "font": "Trebuchet MS", "fontSize": 12, "fontWeight": "bold", "color": "#246a8d"},
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "font": "Trebuchet MS", "fontSize": 12, "fontWeight": "bold", "color": "#18211d"},
       "encoding": {
-        "x": {"field": "x", "type": "quantitative", "axis": null, "scale": {"domain": [-78, 82], "range": [15, 415]}},
-        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [-78, 78], "range": [330, 28]}},
+        "x": {"value": 314},
+        "y": {"value": 184},
+        "text": {"field": "label", "type": "nominal"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"x": 324, "y": 210, "size": 260, "label": "500"},
+          {"x": 324, "y": 236, "size": 560, "label": "1,500"},
+          {"x": 324, "y": 266, "size": 940, "label": "3,000"}
+        ]
+      },
+      "mark": {"type": "circle", "opacity": 0.32, "fill": "#246a8d", "stroke": "#246a8d", "strokeWidth": 1.2},
+      "encoding": {
+        "x": {"value": 324},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [180, 290], "range": [180, 290]}},
+        "size": {"field": "size", "type": "quantitative", "scale": {"domain": [0, 1000], "range": [0, 1000]}, "legend": null}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"x": 348, "y": 210, "label": "500"},
+          {"x": 348, "y": 236, "label": "1,500"},
+          {"x": 348, "y": 266, "label": "3,000"}
+        ]
+      },
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "font": "Trebuchet MS", "fontSize": 11, "color": "#5f6b66"},
+      "encoding": {
+        "x": {"value": 348},
+        "y": {"field": "y", "type": "quantitative", "axis": null, "scale": {"domain": [180, 290], "range": [180, 290]}},
         "text": {"field": "label", "type": "nominal"}
       }
     }
   ],
-  "resolve": {"scale": {"color": "independent"}},
+  "resolve": {"scale": {"color": "independent", "x": "independent", "y": "independent", "size": "independent"}},
   "config": {
     "background": null,
     "legend": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS"},
