@@ -7,7 +7,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  <link rel="stylesheet" href="styles.css?v=20260530e">
+  <link rel="stylesheet" href="styles.css?v=20260530f">
 </head>
 <body>
   <main>
@@ -48,7 +48,7 @@
       <div class="section-copy">
         <p class="kicker">01. National footprint</p>
         <h2>Hazards cluster where climate, people and exposure overlap.</h2>
-        <p>This opening asks where disaster records appear, which hazards are most common, and whether frequency is the same as impact. Use the controls to isolate a hazard, limit the latest year, or brush the timeline to update the map.</p>
+        <p><strong class="story-question">Question:</strong> Where have major hazards appeared historically, and does frequent mean severe? <span class="story-evidence">Evidence:</span> the map locates recorded events, while the companion charts separate event frequency from high-impact disasters. <em class="story-takeaway">Takeaway: exposure is spatial, but severity is selective.</em></p>
       </div>
       <p class="interaction-note">Interact: hazard filter, year slider and timeline brush all update the national map; hover points for event details.</p>
       <div class="wide-chart" id="national_map"></div>
@@ -56,28 +56,28 @@
         <div id="historical_categories" class="chart" data-guide="Read this as composition: each square is about two events, so the long flood row signals frequency rather than severity."></div>
         <div id="historical_top_impact" class="chart"></div>
       </div>
-      <p class="story-note"><strong>Reading the footprint:</strong> the national map shows disaster records clustering around populated coastal corridors, while the frequency grid shows floods as the most common historical category. The high-impact ranking adds a second message: the most frequent hazard is not always the most severe, because a small number of cyclones, bushfires and heatwaves dominate the severe end of the record.</p>
+      <p class="story-note"><strong>Reading the footprint:</strong> records cluster around populated coastal corridors, and <span class="text-flood">floods</span> form the longest frequency row. But the impact ranking changes the interpretation: a smaller number of <span class="text-cyclone">cyclones</span>, <span class="text-bushfire">bushfires</span> and heatwaves dominate the severe end of the historical record.</p>
     </section>
 
     <section class="story-section" data-section="02">
       <div class="section-copy">
         <p class="kicker">02. Modern recovery burden</p>
         <h2>Flood and rainfall dominate formal recovery demand.</h2>
-        <p>This section shifts from recorded events to formal recovery demand. The question is not only what happened, but which hazards repeatedly triggered government recovery support.</p>
+        <p><strong class="story-question">Question:</strong> Which hazards repeatedly trigger formal recovery support? <span class="story-evidence">Evidence:</span> the yearly series shows when demand rose, and the radial chart compares the scale of each hazard group. <em class="story-takeaway">Takeaway: recovery pressure is dominated by water.</em></p>
       </div>
       <div class="two-up">
         <div id="drfa_yearly" class="chart" data-guide="Read the peaks as recovery pressure, not total disasters. The 2022 and 2025 highs show recent years when formal recovery demand intensified."></div>
         <div id="drfa_hazard_counts" class="chart"></div>
       </div>
       <div class="wide-chart" id="drfa_year_hazard"></div>
-      <p class="story-note"><strong>Modern recovery signal:</strong> DRFA activations are not a complete disaster catalogue. They show where formal recovery support was activated, making them useful for identifying repeated public recovery demand after major events. In the radial chart, longer spokes and larger circles indicate larger activation volumes; flood and rainfall clearly dominate, so the time-series spike is mainly a story of repeated flood recovery.</p>
+      <p class="story-note"><strong>Modern recovery signal:</strong> DRFA activations are not a complete disaster catalogue; they show where formal support was activated. In the radial chart, <strong>longer spokes and larger circles</strong> mean larger recovery volumes. <span class="text-flood">Flood / rainfall</span> dominates, so the national spike is mainly a story of repeated flood recovery rather than evenly distributed hazard pressure.</p>
     </section>
 
     <section class="story-section" data-section="03">
       <div class="section-copy">
         <p class="kicker">03. Different places, different hazards</p>
         <h2>Eastern states carry the largest activation burden, but every state has its own hazard profile.</h2>
-        <p>This section asks which states carry the largest recovery burden, and whether they face the same mix of hazards. The maps and profiles are designed for comparison rather than open-ended exploration.</p>
+        <p><strong class="story-question">Question:</strong> Do states carry the same kind of disaster burden? <span class="story-evidence">Evidence:</span> the state map ranks total activations, while the heatmap and small multiples reveal different hazard mixes over time. <em class="story-takeaway">Takeaway: the east carries more demand, but the hazard mix is not uniform.</em></p>
       </div>
       <div class="two-up state-row">
         <div id="drfa_state_counts" class="chart" data-guide="Compare states by shade: darker eastern states show where repeated formal recovery demand has accumulated."></div>
@@ -88,39 +88,39 @@
         </div>
       </div>
       <div class="wide-chart" id="drfa_hazard_small_multiples"></div>
-      <p class="story-note"><strong>Regional pattern:</strong> New South Wales and Queensland carry the largest activation counts, while the heatmap shows that each state combines hazards differently. The small multiples explain why one national trend is not enough: flood and rainfall peak sharply in 2022, bushfire peaks earlier, and storm and cyclone recovery follow different rhythms.</p>
+      <p class="story-note"><strong>Regional pattern:</strong> <strong>New South Wales</strong> and <strong>Queensland</strong> carry the largest activation counts. The heatmap shows that each state combines hazards differently, while the small multiples explain the timing: <span class="text-flood">flood / rainfall</span> peaks sharply in 2022, <span class="text-bushfire">bushfire</span> peaks earlier, and storm and cyclone recovery follow different rhythms.</p>
     </section>
 
     <section class="story-section" data-section="04">
       <div class="section-copy">
         <p class="kicker">04. Repeated exposure</p>
         <h2>Some local government areas return to the recovery system again and again.</h2>
-        <p>This section asks where recovery demand repeats at the local scale, and how DRFA categories connect to hazard groups. Repeated activation is not a blame measure; it signals places where hazard exposure, settlement and geography overlap.</p>
+        <p><strong class="story-question">Question:</strong> Which communities return to the recovery system again and again? <span class="story-evidence">Evidence:</span> the lollipop plot ranks repeated LGA activations, and the link diagram shows how DRFA categories connect to hazard groups. <em class="story-takeaway">Takeaway: repeated activation is a signal of recurring exposure.</em></p>
       </div>
       <div class="two-up uneven">
         <div id="drfa_top_lgas" class="chart"></div>
         <div id="drfa_category_counts" class="chart"></div>
       </div>
-      <p class="story-note"><strong>Repeated exposure:</strong> the leading LGAs are not presented as failures. They identify places where geography, settlement and hazard recurrence repeatedly intersect with recovery systems. In the link diagram, the left side shows DRFA category groups and the right side shows hazard groups; thicker curves mean more activations, revealing how administrative recovery categories and hazard types combine.</p>
+      <p class="story-note"><strong>Repeated exposure:</strong> the leading LGAs are not presented as failures. They identify places where geography, settlement and hazard recurrence repeatedly intersect with recovery systems. In the link diagram, read <strong>left to right</strong>: DRFA category groups connect to hazard groups, and <strong>thicker curves</strong> indicate more activations.</p>
     </section>
 
     <section class="story-section" data-section="05">
       <div class="section-copy">
         <p class="kicker">05. Human consequences</p>
         <h2>The human cost continues after the spectacular disaster event.</h2>
-        <p>The final question is who is affected after the event. AIHW injury reporting keeps the story grounded in people, while historical impact records show how a few extreme events can dominate the human consequence of natural hazards.</p>
+        <p><strong class="story-question">Question:</strong> What does disaster pressure mean for people? <span class="story-evidence">Evidence:</span> AIHW injury reporting shows who appears in hospitalisation and death records, while the bubble chart identifies extreme historical human impacts. <em class="story-takeaway">Takeaway: recovery demand ultimately becomes a human burden.</em></p>
       </div>
       <div class="two-up">
         <div id="aihw_summary" class="chart" data-guide="The darker segment shows the subgroup share inside the total, making male and older-age burdens visible."></div>
         <div id="historical_impact_bubble" class="chart"></div>
       </div>
-      <p class="story-note"><strong>Human endpoint:</strong> the final section shifts from places to people. Hospitalisations and deaths show that natural hazards create measurable health burdens beyond the headline disaster event, so risk should be read as both a geographic pattern and a human outcome.</p>
+      <p class="story-note"><strong>Human endpoint:</strong> the final section shifts from places to people. The AIHW chart highlights subgroup burden, while the bubble chart shows that a few events produce disproportionate deaths or injuries. <em>Risk should therefore be read as both a geographic pattern and a human outcome.</em></p>
     </section>
 
     <section class="conclusion-panel">
       <p class="kicker">Conclusion</p>
       <h2>Disaster risk is a pattern, not a single event.</h2>
-      <p>Across the evidence, floods appear most often, the eastern states absorb the largest formal recovery burden, and several local government areas face repeated activations. The story is not that one hazard is always worst. Frequency, impact, recovery activation and health burden describe different dimensions of risk, and they only become meaningful when read together.</p>
+      <p>Across the evidence, <span class="text-flood">floods appear most often</span>, eastern states absorb the largest formal recovery burden, and several local government areas face repeated activations. The story is not that one hazard is always worst. <strong>Frequency, impact, recovery activation and health burden</strong> describe different dimensions of risk, and they only become meaningful when read together.</p>
       <div class="takeaway-grid" aria-label="Final takeaways">
         <div><strong>Locate</strong><span>events and activations across Australia</span></div>
         <div><strong>Compare</strong><span>hazards, states and local governments</span></div>
@@ -137,6 +137,6 @@
     </footer>
   </main>
 
-  <script src="js/main.js?v=20260530e"></script>
+  <script src="js/main.js?v=20260530f"></script>
 </body>
 </html>
