@@ -356,7 +356,7 @@ h1 {
   padding-top: 12px;
   border-top: 1px solid rgba(103, 91, 73, 0.18);
   color: var(--muted);
-  font: 700 14px/1.45 "Trebuchet MS", Verdana, sans-serif;
+  font: 700 16px/1.5 "Trebuchet MS", Verdana, sans-serif;
 }
 
 .chart[data-guide]::after {
