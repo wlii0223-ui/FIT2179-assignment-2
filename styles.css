@@ -251,6 +251,43 @@ h1 {
   font: 13px/1.35 "Trebuchet MS", Verdana, sans-serif;
 }
 
+.narrative-thread {
+  margin: 34px 0 6px;
+  padding: 26px 30px;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--ember);
+  background: rgba(246, 241, 232, 0.84);
+  box-shadow: 0 16px 34px var(--shadow);
+}
+
+.thread-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid rgba(103, 91, 73, 0.18);
+  background: rgba(103, 91, 73, 0.18);
+}
+
+.thread-grid article {
+  min-height: 138px;
+  padding: 18px;
+  background: rgba(249, 246, 239, 0.9);
+}
+
+.thread-grid strong {
+  display: block;
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1.05;
+}
+
+.thread-grid span {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font: 15px/1.45 "Trebuchet MS", Verdana, sans-serif;
+}
+
 .story-section {
   padding: 58px 0;
   border-bottom: 1px solid var(--line);
@@ -382,6 +419,7 @@ h1 {
 }
 
 .chart[data-guide]::after,
+.wide-chart[data-guide]::after,
 .chart-guide {
   display: block;
   max-width: 620px;
@@ -394,6 +432,12 @@ h1 {
 
 .chart[data-guide]::after {
   content: attr(data-guide);
+}
+
+.wide-chart[data-guide]::after {
+  content: attr(data-guide);
+  max-width: 920px;
+  margin: 14px auto 0;
 }
 
 .chart-note {
@@ -615,10 +659,15 @@ footer a:hover {
 
   .hero-stats,
   .takeaway-grid,
+  .thread-grid,
   .section-copy,
   .two-up,
   .two-up.uneven {
     grid-template-columns: 1fr;
+  }
+
+  .narrative-thread {
+    padding: 22px 18px;
   }
 
   .two-up > .chart,
