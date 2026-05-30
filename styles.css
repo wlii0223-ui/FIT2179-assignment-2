@@ -300,17 +300,14 @@ h1 {
   font: 18px/1.62 "Trebuchet MS", Verdana, sans-serif;
 }
 
-.story-question {
+.section-copy strong,
+.story-note strong {
   color: var(--ink);
   font-weight: 800;
 }
 
-.story-evidence {
-  color: var(--ember);
-  font-weight: 800;
-}
-
-.story-takeaway {
+.section-copy em,
+.story-note em {
   color: var(--ink);
   font-style: italic;
   font-weight: 700;

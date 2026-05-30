@@ -7,7 +7,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  <link rel="stylesheet" href="styles.css?v=20260530f">
+  <link rel="stylesheet" href="styles.css?v=20260530g">
 </head>
 <body>
   <main>
@@ -48,7 +48,7 @@
       <div class="section-copy">
         <p class="kicker">01. National footprint</p>
         <h2>Hazards cluster where climate, people and exposure overlap.</h2>
-        <p><strong class="story-question">Question:</strong> Where have major hazards appeared historically, and does frequent mean severe? <span class="story-evidence">Evidence:</span> the map locates recorded events, while the companion charts separate event frequency from high-impact disasters. <em class="story-takeaway">Takeaway: exposure is spatial, but severity is selective.</em></p>
+        <p>Historical records show where major hazards have appeared across Australia, but they also reveal that <strong>frequent does not always mean severe</strong>. The map locates recorded events, while the companion charts separate <span class="text-flood">flood frequency</span> from high-impact disasters. <em>Exposure is spatial, but severity is selective.</em></p>
       </div>
       <p class="interaction-note">Interact: hazard filter, year slider and timeline brush all update the national map; hover points for event details.</p>
       <div class="wide-chart" id="national_map"></div>
@@ -63,7 +63,7 @@
       <div class="section-copy">
         <p class="kicker">02. Modern recovery burden</p>
         <h2>Flood and rainfall dominate formal recovery demand.</h2>
-        <p><strong class="story-question">Question:</strong> Which hazards repeatedly trigger formal recovery support? <span class="story-evidence">Evidence:</span> the yearly series shows when demand rose, and the radial chart compares the scale of each hazard group. <em class="story-takeaway">Takeaway: recovery pressure is dominated by water.</em></p>
+        <p>This section shifts from recorded events to formal recovery demand. DRFA activations show when support was triggered, and the radial chart compares the scale of each hazard group. The clearest pattern is that <span class="text-flood">flood and rainfall</span> dominate recovery pressure. <em>Read the peaks as recovery demand, not as a count of every disaster.</em></p>
       </div>
       <div class="two-up">
         <div id="drfa_yearly" class="chart" data-guide="Read the peaks as recovery pressure, not total disasters. The 2022 and 2025 highs show recent years when formal recovery demand intensified."></div>
@@ -77,7 +77,7 @@
       <div class="section-copy">
         <p class="kicker">03. Different places, different hazards</p>
         <h2>Eastern states carry the largest activation burden, but every state has its own hazard profile.</h2>
-        <p><strong class="story-question">Question:</strong> Do states carry the same kind of disaster burden? <span class="story-evidence">Evidence:</span> the state map ranks total activations, while the heatmap and small multiples reveal different hazard mixes over time. <em class="story-takeaway">Takeaway: the east carries more demand, but the hazard mix is not uniform.</em></p>
+        <p>States do not carry the same kind of disaster burden. The map ranks total activations, while the heatmap and small multiples reveal different hazard mixes over time. <strong>The east carries more formal recovery demand</strong>, but the pattern is not uniform: <span class="text-flood">flood</span>, <span class="text-bushfire">bushfire</span>, storm and cyclone activations rise at different moments.</p>
       </div>
       <div class="two-up state-row">
         <div id="drfa_state_counts" class="chart" data-guide="Compare states by shade: darker eastern states show where repeated formal recovery demand has accumulated."></div>
@@ -95,7 +95,7 @@
       <div class="section-copy">
         <p class="kicker">04. Repeated exposure</p>
         <h2>Some local government areas return to the recovery system again and again.</h2>
-        <p><strong class="story-question">Question:</strong> Which communities return to the recovery system again and again? <span class="story-evidence">Evidence:</span> the lollipop plot ranks repeated LGA activations, and the link diagram shows how DRFA categories connect to hazard groups. <em class="story-takeaway">Takeaway: repeated activation is a signal of recurring exposure.</em></p>
+        <p>Some communities return to the recovery system repeatedly. The lollipop plot ranks LGAs by repeated activations, and the link diagram shows how DRFA categories connect to hazard groups. <strong>Repeated activation is not a blame measure</strong>; it is a signal of recurring exposure where hazards, settlement and geography overlap.</p>
       </div>
       <div class="two-up uneven">
         <div id="drfa_top_lgas" class="chart"></div>
@@ -108,7 +108,7 @@
       <div class="section-copy">
         <p class="kicker">05. Human consequences</p>
         <h2>The human cost continues after the spectacular disaster event.</h2>
-        <p><strong class="story-question">Question:</strong> What does disaster pressure mean for people? <span class="story-evidence">Evidence:</span> AIHW injury reporting shows who appears in hospitalisation and death records, while the bubble chart identifies extreme historical human impacts. <em class="story-takeaway">Takeaway: recovery demand ultimately becomes a human burden.</em></p>
+        <p>The final section connects disaster pressure to people. AIHW injury reporting shows who appears in hospitalisation and death records, while the bubble chart identifies extreme historical human impacts. <strong>Recovery demand ultimately becomes a human burden</strong>, not only a geographic or administrative pattern.</p>
       </div>
       <div class="two-up">
         <div id="aihw_summary" class="chart" data-guide="The darker segment shows the subgroup share inside the total, making male and older-age burdens visible."></div>
@@ -137,6 +137,6 @@
     </footer>
   </main>
 
-  <script src="js/main.js?v=20260530f"></script>
+  <script src="js/main.js?v=20260530g"></script>
 </body>
 </html>
