@@ -8,45 +8,67 @@
   },
   "data": {"url": "../processed_data/historical_events_clean.csv"},
   "transform": [{"filter": "datum.deaths > 0 || datum.injuries > 0"}],
-  "mark": {"type": "circle", "opacity": 0.66, "stroke": "#1d2320", "strokeWidth": 0.35},
-  "encoding": {
-    "x": {
-      "field": "deaths",
-      "type": "quantitative",
-      "title": "Deaths",
-      "scale": {"type": "sqrt"}
+  "layer": [
+    {
+      "mark": {"type": "circle", "opacity": 0.66, "stroke": "#1d2320", "strokeWidth": 0.35},
+      "encoding": {
+        "x": {
+          "field": "deaths",
+          "type": "quantitative",
+          "title": "Deaths",
+          "scale": {"type": "sqrt"}
+        },
+        "y": {
+          "field": "injuries",
+          "type": "quantitative",
+          "title": "Injuries",
+          "scale": {"type": "sqrt"}
+        },
+        "size": {
+          "field": "impact_score",
+          "type": "quantitative",
+          "title": "Impact score",
+          "scale": {"range": [30, 650]},
+          "legend": {"orient": "bottom", "direction": "horizontal"}
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "title": "Disaster type",
+          "scale": {
+            "domain": ["Flood", "Bushfire", "Severe Storm", "Cyclone", "Environmental", "Hail", "Earthquake", "Landslide", "Tornado"],
+            "range": ["#246a8d", "#c85a2e", "#6c5f9f", "#5f7fa3", "#8a6335", "#d09a2d", "#5f5147", "#7f8fa1", "#5a788a"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "title", "type": "nominal", "title": "Event"},
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "category", "type": "nominal", "title": "Type"},
+          {"field": "deaths", "type": "quantitative", "title": "Deaths", "format": ","},
+          {"field": "injuries", "type": "quantitative", "title": "Injuries", "format": ","}
+        ]
+      }
     },
-    "y": {
-      "field": "injuries",
-      "type": "quantitative",
-      "title": "Injuries",
-      "scale": {"type": "sqrt"}
+    {
+      "transform": [{"filter": "datum.title == 'Bushfire - Black Saturday, Victoria 2009'"}],
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 9, "font": "Trebuchet MS", "fontSize": 12, "fontWeight": "bold", "color": "#8e3423"},
+      "encoding": {
+        "x": {"field": "deaths", "type": "quantitative", "scale": {"type": "sqrt"}},
+        "y": {"field": "injuries", "type": "quantitative", "scale": {"type": "sqrt"}},
+        "text": {"value": "Black Saturday: 173 deaths"}
+      }
     },
-    "size": {
-      "field": "impact_score",
-      "type": "quantitative",
-      "title": "Impact score",
-      "scale": {"range": [30, 650]},
-      "legend": {"orient": "bottom", "direction": "horizontal"}
-    },
-    "color": {
-      "field": "category",
-      "type": "nominal",
-      "title": "Disaster type",
-      "scale": {
-        "domain": ["Flood", "Bushfire", "Severe Storm", "Cyclone", "Environmental", "Hail", "Earthquake", "Landslide", "Tornado"],
-        "range": ["#246a8d", "#c85a2e", "#6c5f9f", "#5f7fa3", "#8a6335", "#d09a2d", "#5f5147", "#7f8fa1", "#5a788a"]
-      },
-      "legend": null
-    },
-    "tooltip": [
-      {"field": "title", "type": "nominal", "title": "Event"},
-      {"field": "year", "type": "ordinal", "title": "Year"},
-      {"field": "category", "type": "nominal", "title": "Type"},
-      {"field": "deaths", "type": "quantitative", "title": "Deaths", "format": ","},
-      {"field": "injuries", "type": "quantitative", "title": "Injuries", "format": ","}
-    ]
-  },
+    {
+      "transform": [{"filter": "datum.title == 'Bushfire - Ash Wednesday'"}],
+      "mark": {"type": "text", "align": "left", "baseline": "top", "dx": 9, "dy": 8, "font": "Trebuchet MS", "fontSize": 12, "fontWeight": "bold", "color": "#8e3423"},
+      "encoding": {
+        "x": {"field": "deaths", "type": "quantitative", "scale": {"type": "sqrt"}},
+        "y": {"field": "injuries", "type": "quantitative", "scale": {"type": "sqrt"}},
+        "text": {"value": "Ash Wednesday: 1,500 injuries"}
+      }
+    }
+  ],
   "config": {
     "background": null,
     "axis": {"labelFont": "Trebuchet MS", "titleFont": "Trebuchet MS", "gridColor": "#e7dfd2", "domain": false},

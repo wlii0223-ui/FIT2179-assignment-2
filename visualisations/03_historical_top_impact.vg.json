@@ -47,7 +47,20 @@
           "type": "nominal",
           "sort": ["Cyclone Tracy", "Ash Wednesday", "Black Saturday", "Hunter Valley flood", "Heatwave 1938", "Heatwave 1939", "Heatwave 2009", "Black Tuesday"]
         },
-        "text": {"value": "largest impact score"}
+        "text": {"value": "Cyclone Tracy: 21,978"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.title == 'Environmental - Heatwave Dec 1938'"}],
+      "mark": {"type": "text", "align": "right", "baseline": "middle", "dx": -8, "font": "Trebuchet MS", "fontSize": 13, "fontWeight": "bold", "color": "#fffaf1"},
+      "encoding": {
+        "x": {"field": "impact_value", "type": "quantitative"},
+        "y": {
+          "field": "short_label",
+          "type": "nominal",
+          "sort": ["Cyclone Tracy", "Ash Wednesday", "Black Saturday", "Hunter Valley flood", "Heatwave 1938", "Heatwave 1939", "Heatwave 2009", "Black Tuesday"]
+        },
+        "text": {"value": "438 deaths"}
       }
     }
   ],

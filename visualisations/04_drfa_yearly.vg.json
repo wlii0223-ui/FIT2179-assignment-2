@@ -37,7 +37,7 @@
     {
       "transform": [
         {"filter": "datum.year == 2011 || datum.year == 2016 || datum.year == 2022 || datum.year == 2025 || datum.year == 2026"},
-        {"calculate": "datum.year == 2011 ? '2011' : datum.year == 2016 ? '2016' : datum.year == 2022 ? '2022 peak' : datum.year == 2025 ? '2025 high' : '2026 partial'", "as": "label"}
+        {"calculate": "datum.year == 2011 ? '2011 surge' : datum.year == 2016 ? '2016 rebound' : datum.year == 2022 ? '2022 peak' : datum.year == 2025 ? '2025 high' : '2026 partial'", "as": "label"}
       ],
       "mark": {"type": "text", "align": "center", "dy": -12, "font": "Trebuchet MS", "fontSize": 13, "color": "#1d2320"},
       "encoding": {
