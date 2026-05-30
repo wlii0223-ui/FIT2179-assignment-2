@@ -348,6 +348,21 @@ h1 {
   overflow-x: hidden;
 }
 
+.chart[data-guide]::after,
+.chart-guide {
+  display: block;
+  max-width: 620px;
+  margin: 12px 4px 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(103, 91, 73, 0.18);
+  color: var(--muted);
+  font: 700 14px/1.45 "Trebuchet MS", Verdana, sans-serif;
+}
+
+.chart[data-guide]::after {
+  content: attr(data-guide);
+}
+
 .chart-note {
   margin: 14px 4px 0;
   color: var(--muted);

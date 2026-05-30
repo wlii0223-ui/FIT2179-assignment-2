@@ -7,7 +7,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  <link rel="stylesheet" href="styles.css?v=20260530c">
+  <link rel="stylesheet" href="styles.css?v=20260530d">
 </head>
 <body>
   <main>
@@ -53,7 +53,7 @@
       <p class="interaction-note">Interact: hazard filter, year slider and timeline brush all update the national map; hover points for event details.</p>
       <div class="wide-chart" id="national_map"></div>
       <div class="two-up historical-row">
-        <div id="historical_categories" class="chart"></div>
+        <div id="historical_categories" class="chart" data-guide="Read this as composition: each square is about two events, so the long flood row signals frequency rather than severity."></div>
         <div id="historical_top_impact" class="chart"></div>
       </div>
       <p class="story-note"><strong>Reading the footprint:</strong> the national map shows disaster records clustering around populated coastal corridors, while the frequency grid shows floods as the most common historical category. The high-impact ranking adds a second message: the most frequent hazard is not always the most severe, because a small number of cyclones, bushfires and heatwaves dominate the severe end of the record.</p>
@@ -66,7 +66,7 @@
         <p>This section shifts from recorded events to formal recovery demand. The question is not only what happened, but which hazards repeatedly triggered government recovery support.</p>
       </div>
       <div class="two-up">
-        <div id="drfa_yearly" class="chart"></div>
+        <div id="drfa_yearly" class="chart" data-guide="Read the peaks as recovery pressure, not total disasters. The 2022 and 2025 highs show recent years when formal recovery demand intensified."></div>
         <div id="drfa_hazard_counts" class="chart"></div>
       </div>
       <div class="wide-chart" id="drfa_year_hazard"></div>
@@ -80,9 +80,10 @@
         <p>This section asks which states carry the largest recovery burden, and whether they face the same mix of hazards. The maps and profiles are designed for comparison rather than open-ended exploration.</p>
       </div>
       <div class="two-up state-row">
-        <div id="drfa_state_counts" class="chart"></div>
+        <div id="drfa_state_counts" class="chart" data-guide="Compare states by shade: darker eastern states show where repeated formal recovery demand has accumulated."></div>
         <div class="chart note-card">
           <div id="drfa_state_hazard"></div>
+          <p class="chart-guide">Read across each row to compare a state's hazard mix; read down each column to see where each hazard group concentrates.</p>
           <p class="chart-note">State abbreviations: ACT = Australian Capital Territory; NSW = New South Wales; NT = Northern Territory; QLD = Queensland; SA = South Australia; TAS = Tasmania; VIC = Victoria; WA = Western Australia.</p>
         </div>
       </div>
@@ -110,7 +111,7 @@
         <p>The final question is who is affected after the event. AIHW injury reporting keeps the story grounded in people, while historical impact records show how a few extreme events can dominate the human consequence of natural hazards.</p>
       </div>
       <div class="two-up">
-        <div id="aihw_summary" class="chart"></div>
+        <div id="aihw_summary" class="chart" data-guide="The darker segment shows the subgroup share inside the total, making male and older-age burdens visible."></div>
         <div id="historical_impact_bubble" class="chart"></div>
       </div>
       <p class="story-note"><strong>Human endpoint:</strong> the final section shifts from places to people. Hospitalisations and deaths show that natural hazards create measurable health burdens beyond the headline disaster event, so risk should be read as both a geographic pattern and a human outcome.</p>
@@ -136,6 +137,6 @@
     </footer>
   </main>
 
-  <script src="js/main.js?v=20260530c"></script>
+  <script src="js/main.js?v=20260530d"></script>
 </body>
 </html>
